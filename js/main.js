@@ -259,16 +259,29 @@
   select.appendChild(other);
 
   var form = $("[data-idees-form]"), status = $("[data-form-status]");
+  var formspree = (S.boiteAIdees.formspree || "").trim();
+  if (!formspree) {
+    set("[data-form-note]", icon("whatsapp") + "<span>Votre idée s’ouvrira dans WhatsApp, prête à être envoyée à l’équipe.</span>");
+  }
+  function sendByWhatsApp() {
+    var d = new FormData(form);
+    var msg = "💡 Idée pour Solid’Action\n\nCommission : " + d.get("commission") + "\n\n" + d.get("idee") +
+      (d.get("nom") ? "\n\n— " + d.get("nom") : "");
+    window.open("https://wa.me/" + String(S.contact.whatsapp).replace(/\D/g, "") + "?text=" + encodeURIComponent(msg), "_blank", "noopener");
+    status.className = "form-status is-ok";
+    status.textContent = "WhatsApp s’est ouvert : il ne reste qu’à appuyer sur « Envoyer ». Merci !";
+  }
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+    if (!formspree) { sendByWhatsApp(); return; }
     var btn = form.querySelector("button[type=submit]");
     btn.disabled = true;
     status.className = "form-status";
     status.textContent = "Envoi en cours…";
-    fetch("/", {
+    fetch(formspree, {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(new FormData(form)).toString(),
+      headers: { Accept: "application/json" },
+      body: new FormData(form),
     }).then(function (r) {
       if (!r.ok) throw new Error(r.status);
       form.reset();

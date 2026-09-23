@@ -433,6 +433,9 @@ button.video-placeholder { cursor: pointer; }
   background: var(--cream) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B9562F' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") right 14px center / 20px no-repeat;
 }
 .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--terracotta); background-color: var(--white); box-shadow: 0 0 0 4px rgba(185, 86, 47, .15); }
+.form-note { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: .88rem; color: var(--muted); text-align: center; }
+.form-note:empty { display: none; }
+.form-note .icon { color: var(--whatsapp); width: 1.1em; height: 1.1em; }
 .form-status { font-size: .95rem; min-height: 1.4em; text-align: center; color: var(--muted); }
 .form-status:empty { display: none; }
 .form-status.is-ok { color: var(--whatsapp); font-weight: 600; background: #E7F3ED; padding: 12px; border-radius: var(--radius-sm); }

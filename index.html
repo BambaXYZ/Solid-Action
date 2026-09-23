@@ -8,15 +8,15 @@
   <meta name="theme-color" content="#FBF6F1">
 
   <!-- Aperçu du lien sur WhatsApp, Facebook, etc.
-       ⚠️ Après la mise en ligne, remplacez https://solid-action.netlify.app par l'adresse réelle du site
-       (dans og:url et og:image). Voir README.md. -->
+       Adresse du site sur GitHub Pages. Si l'adresse change (nom de domaine personnalisé…),
+       remplacez-la dans og:url et og:image. Voir README.md. -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="Solid’Action">
   <meta property="og:title" content="Solid’Action — Votez Salam le 25 octobre">
   <meta property="og:description" content="Candidat à la présidence de l’Association des Étudiants et Stagiaires Sénégalais de Toulouse. Découvrez notre programme et notre équipe. La solidarité dans l’action.">
-  <meta property="og:url" content="https://solid-action.netlify.app/">
-  <meta property="og:image" content="https://solid-action.netlify.app/images/og-image.jpg">
+  <meta property="og:url" content="https://bambaxyz.github.io/Solid-Action/">
+  <meta property="og:image" content="https://bambaxyz.github.io/Solid-Action/images/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Logo Solid’Action — Salam, candidat à la présidence de l’AESST, élection le 25 octobre 2026">
@@ -176,7 +176,7 @@
       </div>
     </section>
 
-    <!-- 11. BOÎTE À IDÉES (Netlify Forms : le formulaire doit rester écrit ici, dans le HTML) -->
+    <!-- 11. BOÎTE À IDÉES (envoi par WhatsApp, ou par Formspree si configuré dans content.js) -->
     <section class="section" id="idees" aria-labelledby="idees-titre">
       <div class="container narrow">
         <div class="section-head center reveal">
@@ -184,9 +184,8 @@
           <h2 id="idees-titre" class="section-title">Votre idée compte</h2>
           <p class="section-intro" data-idees-intro></p>
         </div>
-        <form class="form reveal" name="boite-a-idees" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-idees-form>
-          <input type="hidden" name="form-name" value="boite-a-idees">
-          <p class="visually-hidden"><label>Ne pas remplir : <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <form class="form reveal" name="boite-a-idees" method="POST" data-idees-form>
+          <p class="visually-hidden"><label>Ne pas remplir : <input name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
           <div class="field">
             <label for="idee">Votre idée <span class="req" aria-hidden="true">*</span></label>
             <textarea id="idee" name="idee" rows="5" required maxlength="2000" placeholder="Exemple : organiser des cours de français pour les nouveaux arrivants…"></textarea>
@@ -202,6 +201,7 @@
             <input id="nom" name="nom" type="text" autocomplete="name" maxlength="120">
           </div>
           <button class="btn btn-primary btn-block" type="submit"><span data-icon="envoyer"></span>Envoyer mon idée</button>
+          <p class="form-note" data-form-note></p>
           <p class="form-status" role="status" aria-live="polite" data-form-status></p>
         </form>
       </div>

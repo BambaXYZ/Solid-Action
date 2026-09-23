@@ -314,7 +314,14 @@ const SITE = {
   /* ------------------------------------------------------------------------
      12. BOÎTE À IDÉES
      ------------------------------------------------------------------------ */
+  /* Deux façons de recevoir les idées (au choix) :
+     - Laisser  formspree: ""  → le bouton ouvre WhatsApp avec l'idée déjà écrite,
+       envoyée au numéro de la section 3. Rien à configurer.
+     - Ou créer un formulaire gratuit sur https://formspree.io (50 envois/mois),
+       puis coller son adresse ici, par exemple  formspree: "https://formspree.io/f/abcdwxyz"
+       → les idées arrivent par e-mail et restent anonymes si la personne ne met pas son nom. */
   boiteAIdees: {
+    formspree: "",
     intro: "Une idée pour améliorer la vie des étudiants et stagiaires sénégalais à Toulouse ? Nous lisons toutes les propositions.",
     merci: "Merci ! Votre idée a bien été envoyée à l’équipe Solid’Action.",
   },

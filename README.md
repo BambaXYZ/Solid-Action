@@ -5,8 +5,10 @@ l’Association des Étudiants et Stagiaires Sénégalais de Toulouse (AESST), l
 
 > *La solidarité dans l’action.*
 
-Le site est une simple page web (HTML, CSS, JavaScript), sans installation ni outil technique :
-on peut le mettre en ligne gratuitement sur Netlify en quelques minutes.
+Le site est une simple page web (HTML, CSS, JavaScript), sans installation ni outil technique.
+Il est hébergé **gratuitement sur GitHub Pages** à l’adresse :
+
+**https://bambaxyz.github.io/Solid-Action/**
 
 ---
 
@@ -93,73 +95,75 @@ Chaque dossier contient un fichier `LISEZMOI.txt` qui rappelle ces consignes.
 
 ---
 
-## 3. Mettre le site en ligne gratuitement sur Netlify
+## 3. Mettre le site en ligne gratuitement sur GitHub Pages
 
-### Méthode la plus simple : glisser-déposer (5 minutes)
+### Activer GitHub Pages (une seule fois, 2 minutes)
 
-1. Créez un compte gratuit sur <https://app.netlify.com/signup> (avec votre e-mail ou GitHub).
-2. Une fois connecté, allez dans **Sites** puis **Add new site → Deploy manually**.
-3. **Glissez-déposez le dossier complet du site** (celui qui contient `index.html`) dans la zone indiquée.
-4. Netlify affiche une adresse du type `https://nom-aleatoire-123.netlify.app` : votre site est en ligne !
-5. Pour une adresse plus lisible : **Site configuration → Change site name** → par exemple `solid-action`
-   → le site devient `https://solid-action.netlify.app`.
+1. Ouvrez le dépôt <https://github.com/BambaXYZ/Solid-Action> et cliquez sur **Settings** (Paramètres).
+2. Dans le menu de gauche, cliquez sur **Pages**.
+3. Dans **Build and deployment → Source**, choisissez **Deploy from a branch**.
+4. Dans **Branch**, choisissez la branche qui contient le site
+   (actuellement `claude/solidaction-campaign-site-1fzeqy`) et le dossier **`/ (root)`**, puis **Save**.
+5. Attendez 1 à 2 minutes et rechargez la page : l’adresse du site s’affiche en haut
+   (**https://bambaxyz.github.io/Solid-Action/**). Le site est en ligne !
 
-Pour publier une mise à jour : **Deploys** → glissez-déposez à nouveau le dossier.
+C’est gratuit tant que le dépôt reste **public**.
 
-### Méthode automatique : via GitHub (recommandée pour les mises à jour fréquentes)
+### Mettre à jour le site
 
-1. Sur Netlify : **Add new site → Import an existing project → GitHub**.
-2. Choisissez le dépôt `Solid-Action` et la bonne branche.
-3. Laissez **Build command vide** et **Publish directory** = `.` (déjà réglé par `netlify.toml`).
-4. Cliquez sur **Deploy**.
+Chaque modification enregistrée sur GitHub met le site à jour automatiquement (1 à 2 minutes).
 
-Ensuite, chaque modification de `content.js` enregistrée sur GitHub met le site à jour automatiquement
-en une minute environ.
+- **Modifier un texte** : ouvrez `content.js` sur GitHub → crayon ✏️ (**Edit this file**) → modifiez →
+  **Commit changes**.
+- **Ajouter une photo** : ouvrez le dossier voulu (par exemple `images/equipe`) → **Add file → Upload files** →
+  déposez la photo → **Commit changes**. Puis indiquez son chemin dans `content.js`.
 
-### Activer la boîte à idées (Netlify Forms)
+Astuce : si l’ancienne version s’affiche encore sur votre téléphone, rechargez la page ou ajoutez `?v=2` à la fin du lien.
 
-Le formulaire fonctionne sans serveur grâce à Netlify Forms :
+### La boîte à idées
 
-1. Dans Netlify, ouvrez **Forms** et cliquez sur **Enable form detection**.
-2. **Redéployez** le site une fois (Deploys → Trigger deploy, ou nouveau glisser-déposer).
-3. Le formulaire `boite-a-idees` apparaît dans **Forms**. Les idées envoyées s’y affichent.
-4. Pour les recevoir par e-mail : **Forms → Form notifications → Add notification → Email notification**.
+GitHub Pages n’héberge que des pages, pas de formulaire. Deux options, au choix, dans `content.js`
+(section « 12. BOÎTE À IDÉES ») :
 
-La formule gratuite accepte 100 envois par mois.
+- **Option WhatsApp (par défaut, rien à faire)** : `formspree: ""`. Quand quelqu’un envoie une idée,
+  WhatsApp s’ouvre avec le message déjà rédigé (idée, commission, nom), adressé au numéro de la campagne.
+  La personne n’a plus qu’à appuyer sur « Envoyer ».
+- **Option e-mail, anonyme (gratuit, 50 idées par mois)** :
+  1. Créez un compte sur <https://formspree.io> avec l’adresse e-mail qui doit recevoir les idées.
+  2. Cliquez sur **New Form**, donnez-lui un nom (« Boîte à idées »).
+  3. Copiez l’adresse affichée, du type `https://formspree.io/f/abcdwxyz`.
+  4. Collez-la dans `content.js` : `formspree: "https://formspree.io/f/abcdwxyz",`
+  Les idées arrivent alors directement par e-mail, sans passer par WhatsApp.
 
 ---
 
-## 4. Après la mise en ligne : 3 choses à mettre à jour
+## 4. Vérifications après la mise en ligne
 
 ### a) L’aperçu WhatsApp (image et lien)
 
-WhatsApp a besoin de l’adresse complète du site. Dans `index.html`, remplacez les **deux**
-occurrences de `https://solid-action.netlify.app` par votre adresse réelle :
-
-```html
-<meta property="og:url" content="https://VOTRE-ADRESSE/">
-<meta property="og:image" content="https://VOTRE-ADRESSE/images/og-image.jpg">
-```
-
-L’image d’aperçu (`images/og-image.jpg`, 1200 × 630) est déjà prête.
+`index.html` est déjà réglé sur l’adresse **https://bambaxyz.github.io/Solid-Action/**.
+L’image d’aperçu (`images/og-image.jpg`, 1200 × 630) est prête.
 Pour vérifier l’aperçu : collez le lien dans <https://www.opengraph.xyz>.
 WhatsApp garde les aperçus en mémoire : si l’ancien aperçu s’affiche, ajoutez `?v=2` à la fin du lien.
 
+Si un jour l’adresse change (nom de domaine personnalisé…), remplacez-la dans les lignes
+`og:url` et `og:image` de `index.html`, et régénérez le QR code.
+
 ### b) Le QR code pour les affiches
 
-Les fichiers prêts à imprimer sont dans `qr-code/` :
+Les fichiers prêts à imprimer sont dans `qr-code/` et pointent vers **https://bambaxyz.github.io/Solid-Action/** :
 - `qr-code.svg` : **à utiliser pour l’impression** (qualité parfaite à toutes les tailles) ;
 - `qr-code.png` : 2000 × 2000 px, pour Canva, Word, les réseaux sociaux…
 
-Ils pointent actuellement vers `https://solid-action.netlify.app`. Si votre adresse finale est différente,
-régénérez-les (une seule commande, Python requis) :
+Pour une autre adresse, régénérez-les (Python requis) :
 
 ```bash
 pip install qrcode pillow
-python3 outils/generer-qr.py https://VOTRE-ADRESSE
+python3 outils/generer-qr.py https://NOUVELLE-ADRESSE
 ```
 
 Imprimez le QR code en **3 cm × 3 cm minimum** et **testez-le avec plusieurs téléphones** avant l’impression.
+Vérifiez aussi que le site est bien en ligne avant d’imprimer les affiches.
 
 ### c) La date et l’heure du vote
 
@@ -199,13 +203,13 @@ documents/          → guide des nouveaux arrivants (PDF)
 videos/             → vidéo du candidat
 qr-code/            → QR code pour les affiches
 outils/             → scripts de génération (logo, QR code) et modèle de l'image d'aperçu
-netlify.toml        → réglages Netlify
+.nojekyll           → indique à GitHub Pages de publier les fichiers tels quels
 ```
 
 ### Voir le site sur son ordinateur avant de le publier
 
 Double-cliquez sur `index.html` : le site s’ouvre dans le navigateur.
-(Seul l’envoi du formulaire ne fonctionne qu’une fois le site en ligne sur Netlify.)
+(Les polices peuvent s’afficher légèrement différemment en local : c’est normal, tout est correct une fois en ligne.)
 
 ---
 

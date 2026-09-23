@@ -11,7 +11,7 @@ import sys
 import qrcode
 from PIL import Image, ImageDraw
 
-URL = sys.argv[1] if len(sys.argv) > 1 else "https://solid-action.netlify.app"
+URL = sys.argv[1] if len(sys.argv) > 1 else "https://bambaxyz.github.io/Solid-Action/"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "qr-code")
 BROWN, CREAM, TERRA = "#2A1A14", "#FFFFFF", "#B9562F"
