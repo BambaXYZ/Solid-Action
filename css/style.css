@@ -331,6 +331,24 @@ mark.todo { background: var(--todo); color: var(--brown); border-radius: 4px; pa
 .chef-nom { font-family: var(--font-title); font-size: 1.9rem; line-height: 1.15; }
 .chef-slogan { font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: #D9C6BB; }
 .chef::after { content: ""; position: absolute; bottom: 0; left: 50%; width: 2px; height: 28px; background: rgba(233, 169, 139, .55); }
+.chef-seul::after { display: none; }
+/* bureau (vice-présidence, secrétariat…) */
+.bureau { display: grid; gap: 16px; position: relative; max-width: 760px; margin: 0 auto; }
+.bureau-card { background: var(--cream); color: var(--brown); border-radius: var(--radius); padding: 28px 22px 24px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px; position: relative; }
+.avatar-bureau { width: 96px; height: 96px; font-size: 2rem; margin-bottom: 12px; box-shadow: 0 0 0 4px var(--white), 0 0 0 6px var(--peach); }
+.bureau-nom { font-size: 1.35rem; }
+.bureau-card .membre-statut { max-width: 30ch; }
+.bureau-engagement { margin-top: 12px; font-style: italic; color: var(--brown-2); font-size: .95rem; line-height: 1.5; max-width: 34ch; }
+.bureau + .poles, .bureau + .annonce { margin-top: 40px; }
+/* annonce des commissions à venir */
+.annonce { max-width: 860px; margin-left: auto; margin-right: auto; border: 1.5px dashed rgba(233, 169, 139, .5); border-radius: var(--radius); padding: 24px 20px; text-align: center; }
+.annonce-texte { display: inline-flex; align-items: flex-start; gap: 10px; color: var(--cream); font-weight: 500; text-align: left; }
+.annonce-texte .icon { color: var(--peach); margin-top: .15em; }
+.annonce-commissions { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 18px; }
+.annonce-commissions a { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: rgba(251, 246, 241, .08); color: var(--cream); text-decoration: none; font-size: .88rem; font-weight: 500; transition: background-color .2s; }
+.annonce-commissions a:hover { background: var(--terracotta); }
+.annonce-commissions .icon { width: 1.05em; height: 1.05em; color: var(--peach); }
+.annonce-commissions a:hover .icon { color: var(--cream); }
 .poles { display: grid; gap: 16px; position: relative; }
 .pole { background: var(--cream); color: var(--brown); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; position: relative; }
 .pole-head { display: flex; align-items: center; gap: 12px; padding-bottom: 16px; margin-bottom: 4px; border-bottom: 1px solid var(--line); }
@@ -520,6 +538,14 @@ button.video-placeholder { cursor: pointer; }
   .commission-chevron { display: none; }
   .commission-body { padding: 0 24px 26px; }
   .realisations { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .bureau-2 { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .bureau-3 { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .bureau-2, .bureau-3 { padding-top: 28px; }
+  .bureau-2::before, .bureau-3::before { content: ""; position: absolute; top: 0; height: 2px; background: rgba(233, 169, 139, .55); }
+  .bureau-2::before { left: 25%; right: 25%; }
+  .bureau-3::before { left: calc(100% / 6); right: calc(100% / 6); }
+  .bureau-2 .bureau-card::before, .bureau-3 .bureau-card::before { content: ""; position: absolute; top: -28px; left: 50%; width: 2px; height: 28px; background: rgba(233, 169, 139, .55); }
+  .bureau-1 .bureau-card { max-width: 420px; margin: 0 auto; }
   .poles { grid-template-columns: repeat(2, 1fr); gap: 20px; padding-top: 28px; }
   /* organigramme : trait horizontal reliant les commissions */
   .poles::before { content: ""; position: absolute; top: 0; left: 25%; right: 25%; height: 2px; background: rgba(233, 169, 139, .55); }
