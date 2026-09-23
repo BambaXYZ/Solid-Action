@@ -1,0 +1,3 @@
+Déposez ici la vidéo verticale du candidat (MP4, format 9:16, moins de 20 Mo conseillé),
+puis indiquez-la dans content.js, section « 11. LA VIDÉO » :  fichier: "videos/salam.mp4",
+Astuce : une vidéo YouTube (Shorts) est plus légère pour le site : utilisez alors la ligne « youtube ».

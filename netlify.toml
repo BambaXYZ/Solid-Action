@@ -1,0 +1,14 @@
+# Configuration Netlify : aucun « build », le site est publié tel quel.
+[build]
+  publish = "."
+
+# Mise en cache longue des polices et images pour un chargement rapide
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

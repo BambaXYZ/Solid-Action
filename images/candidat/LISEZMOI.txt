@@ -1,0 +1,12 @@
+PHOTOS DU CANDIDAT
+------------------
+Déposez ici :
+  candidat-accueil.jpg   → grande photo de l'accueil (portrait vertical, fond neutre, ~1000 x 1250 px)
+  candidat-portrait.jpg  → photo plus naturelle pour la section « Le candidat » (~1000 x 1250 px)
+  video-apercu.jpg       → (facultatif) image affichée avant la lecture de la vidéo
+
+Puis indiquez les chemins dans content.js, section « 4. LE CANDIDAT » :
+  photoAccueil: "images/candidat/candidat-accueil.jpg",
+  photoPortrait: "images/candidat/candidat-portrait.jpg",
+
+Conseil : compressez les photos sur https://squoosh.app (qualité 75, moins de 250 Ko).

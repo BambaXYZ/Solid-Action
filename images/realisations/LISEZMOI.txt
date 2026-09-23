@@ -1,0 +1,5 @@
+PHOTOS DES RÉALISATIONS (facultatif)
+------------------------------------
+Déposez ici une photo horizontale par action (~1200 x 750 px), puis ajoutez dans content.js,
+section « 9. DÉJÀ EN ACTION », sur la ligne de l'action :
+  photo: "images/realisations/accueil-rentree.jpg",

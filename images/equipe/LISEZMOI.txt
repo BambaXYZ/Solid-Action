@@ -1,0 +1,7 @@
+PHOTOS DE L'ÉQUIPE DE CAMPAGNE
+------------------------------
+Déposez ici une photo CARRÉE par personne (~400 x 400 px, même cadrage et même fond
+pour tout le monde si possible), nommée prenom-nom.jpg, par exemple : awa-diop.jpg
+
+Puis dans content.js, section « 10. L'ÉQUIPE DE CAMPAGNE » :
+  photo: "images/equipe/awa-diop.jpg",

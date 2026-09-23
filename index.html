@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Solid’Action — Salam, candidat à la présidence de l’AESST</title>
+  <meta name="description" content="Salam et la liste Solid’Action, candidats à la présidence de l’Association des Étudiants et Stagiaires Sénégalais de Toulouse. Élection le dimanche 25 octobre 2026. La solidarité dans l’action.">
+  <meta name="theme-color" content="#FBF6F1">
+
+  <!-- Aperçu du lien sur WhatsApp, Facebook, etc.
+       ⚠️ Après la mise en ligne, remplacez https://solid-action.netlify.app par l'adresse réelle du site
+       (dans og:url et og:image). Voir README.md. -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Solid’Action">
+  <meta property="og:title" content="Solid’Action — Votez Salam le 25 octobre">
+  <meta property="og:description" content="Candidat à la présidence de l’Association des Étudiants et Stagiaires Sénégalais de Toulouse. Découvrez notre programme et notre équipe. La solidarité dans l’action.">
+  <meta property="og:url" content="https://solid-action.netlify.app/">
+  <meta property="og:image" content="https://solid-action.netlify.app/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logo Solid’Action — Salam, candidat à la présidence de l’AESST, élection le 25 octobre 2026">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/logo/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png">
+
+  <link rel="preload" href="fonts/poppins-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <!-- 1. MENU -->
+  <header class="site-header" id="haut">
+    <div class="container header-inner">
+      <a class="brand" href="#accueil" aria-label="Solid’Action, retour à l’accueil">
+        <img src="images/logo/logo-menu.svg" alt="Solid’Action" width="178" height="40">
+      </a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="menu" aria-label="Navigation principale">
+        <ul>
+          <li><a href="#candidat">Candidat</a></li>
+          <li><a href="#programme">Programme</a></li>
+          <li><a href="#gouvernement">Gouvernement</a></li>
+          <li><a href="#equipe">Équipe</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a class="btn btn-primary btn-sm nav-cta" data-whatsapp href="#contact"><span data-icon="whatsapp"></span>WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <noscript><p class="noscript">Activez JavaScript pour afficher le contenu du site Solid’Action.</p></noscript>
+
+    <!-- 2. ACCUEIL -->
+    <section class="hero" id="accueil" aria-labelledby="hero-titre">
+      <div class="container hero-grid">
+        <div class="hero-photo" data-hero-photo></div>
+        <div class="hero-text">
+          <p class="hero-badge" data-election-badge></p>
+          <h1 id="hero-titre" class="hero-name" data-candidat-nom></h1>
+          <p class="hero-role" data-candidat-fonction></p>
+          <p class="hero-slogan" data-slogan></p>
+          <div class="countdown" data-countdown aria-live="off"></div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#programme">Découvrir le programme<span data-icon="bas"></span></a>
+            <a class="btn btn-whatsapp" data-whatsapp href="#contact"><span data-icon="whatsapp"></span>Nous écrire sur WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. LE CANDIDAT -->
+    <section class="section" id="candidat" aria-labelledby="candidat-titre">
+      <div class="container">
+        <div class="candidat-grid">
+          <div class="candidat-photo reveal" data-candidat-portrait></div>
+          <div class="candidat-text reveal">
+            <p class="eyebrow">Le candidat</p>
+            <h2 id="candidat-titre" class="section-title" data-candidat-titre></h2>
+            <p class="lead" data-candidat-accroche></p>
+            <div class="bio" data-candidat-bio></div>
+            <ul class="parcours" data-candidat-parcours></ul>
+          </div>
+        </div>
+        <figure class="quote reveal" data-candidat-citation></figure>
+        <ul class="stats" data-candidat-chiffres></ul>
+      </div>
+    </section>
+
+    <!-- 4. NOS VALEURS -->
+    <section class="section section-soft" id="valeurs" aria-labelledby="valeurs-titre">
+      <div class="container">
+        <div class="section-head center reveal">
+          <img class="valeurs-logo" src="images/logo/logo-complet.svg" alt="Solid’Action — La solidarité dans l’action" width="280" height="190" loading="lazy">
+          <h2 id="valeurs-titre" class="visually-hidden">Nos valeurs</h2>
+          <p class="eyebrow">Nos valeurs</p>
+        </div>
+        <ul class="valeurs" data-valeurs></ul>
+      </div>
+    </section>
+
+    <!-- 5. LE PROGRAMME -->
+    <section class="section" id="programme" aria-labelledby="programme-titre">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Le programme</p>
+          <h2 id="programme-titre" class="section-title">Nos propositions, commission par commission</h2>
+          <p class="section-intro">Pour chaque commission : ce qui ne va pas aujourd’hui, et ce que nous ferons concrètement.</p>
+        </div>
+        <div class="commissions" data-commissions></div>
+      </div>
+    </section>
+
+    <!-- 6. LE GOUVERNEMENT -->
+    <section class="section section-dark" id="gouvernement" aria-labelledby="gouvernement-titre">
+      <div class="container">
+        <div class="section-head center reveal">
+          <p class="eyebrow">L’équipe dirigeante</p>
+          <h2 id="gouvernement-titre" class="section-title">Le gouvernement Solid’Action</h2>
+          <p class="section-intro" data-gouvernement-intro></p>
+        </div>
+        <div class="organigramme" data-gouvernement></div>
+      </div>
+    </section>
+
+    <!-- 7. NOS 100 PREMIERS JOURS -->
+    <section class="section" id="cent-jours" aria-labelledby="cent-jours-titre">
+      <div class="container">
+        <div class="section-head center reveal">
+          <p class="eyebrow">Nos engagements datés</p>
+          <h2 id="cent-jours-titre" class="section-title">Nos 100 premiers jours</h2>
+        </div>
+        <ol class="timeline" data-cent-jours></ol>
+      </div>
+    </section>
+
+    <!-- 8. DÉJÀ EN ACTION -->
+    <section class="section section-soft" id="realisations" aria-labelledby="realisations-titre">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Déjà en action</p>
+          <h2 id="realisations-titre" class="section-title">Nous n’avons pas attendu l’élection</h2>
+        </div>
+        <ul class="realisations" data-realisations></ul>
+        <div class="guide reveal" data-guide></div>
+      </div>
+    </section>
+
+    <!-- 9. L'ÉQUIPE DE CAMPAGNE -->
+    <section class="section" id="equipe" aria-labelledby="equipe-titre">
+      <div class="container">
+        <div class="section-head center reveal">
+          <p class="eyebrow">L’équipe de campagne</p>
+          <h2 id="equipe-titre" class="section-title">Ils et elles portent la campagne</h2>
+        </div>
+        <ul class="equipe" data-equipe></ul>
+      </div>
+    </section>
+
+    <!-- 10. LA VIDÉO -->
+    <section class="section section-soft" id="video" aria-labelledby="video-titre">
+      <div class="container video-grid">
+        <div class="video-text reveal">
+          <p class="eyebrow">La vidéo</p>
+          <h2 id="video-titre" class="section-title" data-video-titre></h2>
+          <p class="section-intro" data-video-texte></p>
+        </div>
+        <div class="video-frame reveal" data-video></div>
+      </div>
+    </section>
+
+    <!-- 11. BOÎTE À IDÉES (Netlify Forms : le formulaire doit rester écrit ici, dans le HTML) -->
+    <section class="section" id="idees" aria-labelledby="idees-titre">
+      <div class="container narrow">
+        <div class="section-head center reveal">
+          <p class="eyebrow">Boîte à idées</p>
+          <h2 id="idees-titre" class="section-title">Votre idée compte</h2>
+          <p class="section-intro" data-idees-intro></p>
+        </div>
+        <form class="form reveal" name="boite-a-idees" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-idees-form>
+          <input type="hidden" name="form-name" value="boite-a-idees">
+          <p class="visually-hidden"><label>Ne pas remplir : <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+          <div class="field">
+            <label for="idee">Votre idée <span class="req" aria-hidden="true">*</span></label>
+            <textarea id="idee" name="idee" rows="5" required maxlength="2000" placeholder="Exemple : organiser des cours de français pour les nouveaux arrivants…"></textarea>
+          </div>
+          <div class="field">
+            <label for="commission">Commission concernée</label>
+            <select id="commission" name="commission" data-commission-select>
+              <option value="Je ne sais pas">Je ne sais pas</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="nom">Votre nom <span class="optional">(facultatif)</span></label>
+            <input id="nom" name="nom" type="text" autocomplete="name" maxlength="120">
+          </div>
+          <button class="btn btn-primary btn-block" type="submit"><span data-icon="envoyer"></span>Envoyer mon idée</button>
+          <p class="form-status" role="status" aria-live="polite" data-form-status></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- 12. QUESTIONS FRÉQUENTES -->
+    <section class="section section-soft" id="faq" aria-labelledby="faq-titre">
+      <div class="container narrow">
+        <div class="section-head center reveal">
+          <p class="eyebrow">Questions fréquentes</p>
+          <h2 id="faq-titre" class="section-title">Voter, mode d’emploi</h2>
+        </div>
+        <div class="faq" data-faq></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 13. PIED DE PAGE -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo/logo-complet-clair.svg" alt="Solid’Action — La solidarité dans l’action" width="240" height="163" loading="lazy">
+      </div>
+      <div class="footer-vote" data-footer-vote></div>
+      <div class="footer-contact">
+        <h2 class="footer-title">Nous contacter</h2>
+        <ul class="footer-list" data-footer-contact></ul>
+        <ul class="socials" data-socials></ul>
+        <a class="btn btn-whatsapp" data-whatsapp href="#contact"><span data-icon="whatsapp"></span>Nous écrire sur WhatsApp</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p data-footer-bottom></p>
+      <a href="#haut" class="to-top">Haut de page ↑</a>
+    </div>
+  </footer>
+
+  <a class="wa-float" data-whatsapp href="#contact" aria-label="Nous écrire sur WhatsApp"><span data-icon="whatsapp"></span></a>
+
+  <script src="content.js"></script>
+  <script src="js/icones.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
