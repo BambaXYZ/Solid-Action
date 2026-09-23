@@ -186,21 +186,40 @@
     return '<div class="membre">' + avatar(p.photo, p.nom, "avatar-md") +
       '<div class="membre-info"><span class="membre-role">' + txt(p.titre || defaultRole) + "</span>" +
       '<strong class="membre-nom">' + txt(p.nom) + "</strong>" +
-      '<span class="membre-statut">' + txt(p.statut) + "</span></div>" +
-      '<p class="membre-engagement">« ' + txt(p.engagement) + " »</p></div>";
+      (p.statut ? '<span class="membre-statut">' + txt(p.statut) + "</span>" : "") + "</div>" +
+      (p.engagement ? '<p class="membre-engagement">«\u00a0' + txt(p.engagement) + "\u00a0»</p>" : "") + "</div>";
   }
+  var G = S.gouvernement, bureau = G.bureau || [], poles = G.poles || [];
+  var bureauHtml = bureau.length
+    ? '<div class="bureau bureau-' + Math.min(bureau.length, 3) + '">' + bureau.map(function (p) {
+        return '<article class="bureau-card reveal">' + avatar(p.photo, p.nom, "avatar-bureau") +
+          '<span class="membre-role">' + txt(p.titre) + "</span>" +
+          '<h3 class="bureau-nom">' + txt(p.nom) + "</h3>" +
+          (p.statut ? '<span class="membre-statut">' + txt(p.statut) + "</span>" : "") +
+          (p.engagement ? '<p class="bureau-engagement">«\u00a0' + txt(p.engagement) + "\u00a0»</p>" : "") +
+          "</article>";
+      }).join("") + "</div>"
+    : "";
+  var polesHtml = poles.length
+    ? '<div class="poles">' + poles.map(function (pole) {
+        var m = commissionsById[pole.commission] || { nom: pole.commission, icone: "etoile" };
+        return '<article class="pole reveal"><header class="pole-head"><span class="pole-icon">' + icon(m.icone) + "</span>" +
+          '<div><span class="pole-kicker">Commission</span><h3>' + txt(m.nom) + "</h3></div></header>" +
+          '<div class="pole-membres">' + membre(pole.president, "Président de commission") + membre(pole.adjoint, "Adjoint") + "</div>" +
+          (commissionsById[pole.commission] ? '<a class="pole-link" href="#commission-' + esc(pole.commission) + '" data-open-commission="' + esc(pole.commission) + '">Voir les propositions' + icon("fleche") + "</a>" : "") +
+          "</article>";
+      }).join("") + "</div>"
+    : (G.annonce
+      ? '<div class="annonce reveal"><p class="annonce-texte">' + icon("etoile") + "<span>" + txt(G.annonce) + "</span></p>" +
+        '<ul class="annonce-commissions">' + S.commissions.map(function (m) {
+          return '<li><a href="#commission-' + esc(m.id) + '" data-open-commission="' + esc(m.id) + '">' + icon(m.icone) + "<span>" + txt(m.nom) + "</span></a></li>";
+        }).join("") + "</ul></div>"
+      : "");
   set("[data-gouvernement]",
-    '<div class="chef reveal">' + avatar(c.photoPortrait || c.photoAccueil, nomComplet, "avatar-lg") +
+    '<div class="chef reveal' + (bureau.length || poles.length ? "" : " chef-seul") + '">' + avatar(c.photoPortrait || c.photoAccueil, nomComplet, "avatar-lg") +
     '<span class="membre-role">Candidat à la présidence</span><strong class="chef-nom">' + txt(nomComplet) + "</strong>" +
     '<span class="chef-slogan">' + txt(S.general.slogan) + "</span></div>" +
-    '<div class="poles">' + S.gouvernement.poles.map(function (pole) {
-      var m = commissionsById[pole.commission] || { nom: pole.commission, icone: "etoile" };
-      return '<article class="pole reveal"><header class="pole-head"><span class="pole-icon">' + icon(m.icone) + "</span>" +
-        '<div><span class="pole-kicker">Commission</span><h3>' + txt(m.nom) + "</h3></div></header>" +
-        '<div class="pole-membres">' + membre(pole.president, "Président de commission") + membre(pole.adjoint, "Adjoint") + "</div>" +
-        (commissionsById[pole.commission] ? '<a class="pole-link" href="#commission-' + esc(pole.commission) + '" data-open-commission="' + esc(pole.commission) + '">Voir les propositions' + icon("fleche") + "</a>" : "") +
-        "</article>";
-    }).join("") + "</div>");
+    bureauHtml + polesHtml);
   $$("[data-open-commission]").forEach(function (a) {
     a.addEventListener("click", function () { openCommission(a.getAttribute("data-open-commission")); });
   });

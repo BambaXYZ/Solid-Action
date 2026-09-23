@@ -39,8 +39,8 @@ const SITE = {
   election: {
     date: "2026-10-25T10:00:00+01:00",
     dateTexte: "Dimanche 25 octobre 2026",
-    horaires: "De 10 h à 18 h [À REMPLIR]",
-    lieu: "Salle [À REMPLIR], Toulouse",
+    horaires: "Horaires communiqués prochainement",
+    lieu: "Lieu communiqué prochainement, à Toulouse",
     lieuLienCarte: "", // lien Google Maps du lieu de vote (facultatif)
   },
 
@@ -51,11 +51,11 @@ const SITE = {
      Exemple pour 06 12 34 56 78 en France : "33612345678".
      Laissez "" pour un réseau que vous n'utilisez pas : il sera masqué. */
   contact: {
-    whatsapp: "33600000000", // [À REMPLIR]
+    whatsapp: "33600000000", // ⚠️ [À REMPLIR] : numéro WhatsApp de la campagne (faux numéro pour l'instant)
     messageWhatsapp: "Bonjour Solid’Action ! J’ai une question sur votre programme :",
-    telephoneAffiche: "+33 6 00 00 00 00 [À REMPLIR]",
-    email: "contact@solidaction.fr", // [À REMPLIR]
-    instagram: "https://www.instagram.com/", // [À REMPLIR]
+    telephoneAffiche: "", // ex. "+33 6 12 34 56 78" (laisser "" pour ne pas l'afficher)
+    email: "",            // ex. "solidaction.aesst@gmail.com"
+    instagram: "",        // ex. "https://www.instagram.com/solidaction.aesst"
     facebook: "",
     tiktok: "",
     linkedin: "",
@@ -66,7 +66,7 @@ const SITE = {
      ------------------------------------------------------------------------ */
   candidat: {
     prenom: "Salam",
-    nom: "", // [À REMPLIR] nom de famille (laisser "" pour n'afficher que le prénom)
+    nom: "", // nom de famille (laisser "" pour n'afficher que le prénom)
     fonction: "Candidat à la présidence de l’Association des Étudiants et Stagiaires Sénégalais de Toulouse",
 
     // Grande photo de l'accueil (idéalement portrait vertical, fond neutre, 1200 px de haut)
@@ -74,30 +74,31 @@ const SITE = {
     // Photo plus naturelle pour la section « Le candidat »
     photoPortrait: "", // ex. "images/candidat/candidat-portrait.jpg"
 
-    accroche: "Étudiant, bénévole et Toulousain d’adoption, je veux une association qui agit concrètement pour chacun d’entre nous.",
+    accroche: "Étudiant en Master 1 au Mirail et vice-président de l’AESST, je veux une association qui agit concrètement pour chacun d’entre nous.",
 
     biographie: [
-      "Arrivé à Toulouse en [À REMPLIR] pour mes études de [À REMPLIR], j’ai vécu comme beaucoup d’entre vous les premières semaines difficiles : logement, démarches, solitude.",
-      "Depuis, je m’engage pour que plus personne ne vive cette arrivée seul. [À REMPLIR : 2 ou 3 phrases sur votre parcours et vos engagements.]",
+      "Arrivé à Toulouse il y a trois ans pour étudier les langues, littératures et civilisations étrangères (LLCER) à l’Université Toulouse Jean-Jaurès, j’ai vécu comme beaucoup d’entre vous les premières semaines difficiles : logement, démarches, éloignement de la famille.",
+      "J’y ai suivi toute ma licence, de la L1 à la L3, avant d’entrer en Master 1 LLCER parcours international. En parallèle, je me suis engagé dans la vie de notre communauté, jusqu’à devenir vice-président de l’AESST dans le bureau actuel.",
+      "Cette expérience m’a appris ce que notre association sait faire de mieux, et ce qu’il lui manque encore. C’est pour aller plus loin, ensemble, que je me présente aujourd’hui.",
     ],
 
     // Trois repères du parcours
     parcours: [
-      { titre: "Études", texte: "Master [À REMPLIR] à l’Université [À REMPLIR]" },
-      { titre: "Parcours", texte: "[À REMPLIR] : stage, emploi ou expérience marquante" },
-      { titre: "Engagements", texte: "Bénévole à [À REMPLIR], membre de l’AESST depuis [À REMPLIR]" },
+      { titre: "Études", texte: "Master 1 LLCER, parcours international, Université Toulouse Jean-Jaurès (Le Mirail)" },
+      { titre: "Parcours", texte: "Licence LLCER de la L1 à la L3 au Mirail, trois ans de vie étudiante à Toulouse" },
+      { titre: "Engagements", texte: "Vice-président de l’AESST dans le bureau actuel" },
     ],
 
     citation: {
       titre: "Pourquoi je me présente",
-      texte: "Parce que la solidarité ne se proclame pas, elle se prouve. Je me présente pour que notre association soit présente à chaque étape de la vie étudiante : à l’arrivée, pendant les études et au moment de se lancer. [À REMPLIR]",
+      texte: "Parce que la solidarité ne se proclame pas, elle se prouve. Je me présente pour que notre association soit présente à chaque étape de la vie étudiante : à l’arrivée, pendant les études et au moment de se lancer. Vice-président sortant, je connais le terrain : je sais ce qui fonctionne et ce qu’il faut changer.",
     },
 
     // Trois chiffres clés (animés au défilement). valeur = un nombre uniquement.
     chiffres: [
-      { valeur: 5, suffixe: " ans", texte: "d’engagement associatif [À REMPLIR]" },
-      { valeur: 150, suffixe: "+", texte: "nouveaux arrivants accompagnés [À REMPLIR]" },
-      { valeur: 12, suffixe: "", texte: "événements organisés [À REMPLIR]" },
+      { valeur: 3, suffixe: " ans", texte: "d’études et d’engagement à Toulouse" },
+      { valeur: 6, suffixe: "", texte: "commissions pour couvrir toute la vie étudiante" },
+      { valeur: 18, suffixe: "", texte: "propositions concrètes dans notre programme" },
     ],
   },
 
@@ -190,46 +191,39 @@ const SITE = {
   /* ------------------------------------------------------------------------
      7. LE GOUVERNEMENT SOLID'ACTION
      ------------------------------------------------------------------------
-     Un bloc par commission : "commission" doit reprendre un "id" de la
-     section 6 pour que le lien « Voir les propositions » fonctionne.
-     Photos à mettre dans images/gouvernement/
-     Pour une femme, ajoutez  titre: "Présidente de commission"  ou  titre: "Adjointe"
-     dans son bloc, par exemple :
-       adjoint: { nom: "Awa Diop", titre: "Adjointe", statut: "...", photo: "", engagement: "..." }, */
+     bureau : les membres du bureau autour du candidat (vice-présidence,
+     secrétariat général, trésorerie…). Photos dans images/gouvernement/
+     Ajouter une personne = copier-coller un bloc { … }, sans oublier la virgule.
+
+     poles : les présidents et adjoints de commission. Laissez  poles: []
+     tant qu'ils ne sont pas annoncés : le texte « annonce » s'affiche à la place.
+     Modèle d'un pôle (commission = un "id" de la section 6) :
+       {
+         commission: "social",
+         president: { nom: "…", titre: "Présidente de commission", statut: "…", photo: "", engagement: "…" },
+         adjoint: { nom: "…", titre: "Adjoint", statut: "…", photo: "", engagement: "…" },
+       },
+     statut : filière ou situation (laisser "" pour ne rien afficher). */
   gouvernement: {
-    intro: "Une équipe déjà constituée, avec un président et un adjoint pour chaque commission, prête à travailler dès le premier jour.",
-    poles: [
+    intro: "Une équipe déjà en place autour de Salam, prête à travailler dès le premier jour.",
+    bureau: [
       {
-        commission: "social",
-        president: { nom: "Prénom Nom [À REMPLIR]", statut: "Master Droit social", photo: "", engagement: "Aucune demande d’aide ne restera sans réponse." },
-        adjoint: { nom: "Prénom Nom [À REMPLIR]", statut: "Licence AES", photo: "", engagement: "Écouter d’abord, agir ensuite, vite." },
+        nom: "Khoudia",
+        titre: "Vice-présidente",
+        statut: "Master 1 E2-CMD, Université Toulouse III – Paul Sabatier",
+        photo: "", // ex. "images/gouvernement/khoudia.jpg"
+        engagement: "Être à l’écoute de chaque étudiant et faire avancer nos projets avec rigueur.",
       },
       {
-        commission: "logement",
-        president: { nom: "Prénom Nom [À REMPLIR]", statut: "Master Génie civil", photo: "", engagement: "Un toit dès l’arrivée, c’est la base de tout." },
-        adjoint: { nom: "Prénom Nom [À REMPLIR]", statut: "BTS Immobilier", photo: "", engagement: "Je connais les pièges, je veux vous les éviter." },
-      },
-      {
-        commission: "accueil",
-        president: { nom: "Prénom Nom [À REMPLIR]", statut: "Licence Informatique", photo: "", engagement: "Chaque nouvel arrivant aura un visage ami." },
-        adjoint: { nom: "Prénom Nom [À REMPLIR]", statut: "Stagiaire en communication", photo: "", engagement: "Personne ne devrait découvrir Toulouse seul." },
-      },
-      {
-        commission: "etudes",
-        president: { nom: "Prénom Nom [À REMPLIR]", statut: "Doctorante en économie", photo: "", engagement: "Ouvrir nos réseaux pour ouvrir des portes." },
-        adjoint: { nom: "Prénom Nom [À REMPLIR]", statut: "Master Management", photo: "", engagement: "Un stage trouvé grâce à l’association, c’est une réussite collective." },
-      },
-      {
-        commission: "culture",
-        president: { nom: "Prénom Nom [À REMPLIR]", statut: "Licence Arts du spectacle", photo: "", engagement: "Faire vivre notre culture et la partager." },
-        adjoint: { nom: "Prénom Nom [À REMPLIR]", statut: "Master Marketing", photo: "", engagement: "Des événements réguliers, bien organisés, pour tous." },
-      },
-      {
-        commission: "sport",
-        president: { nom: "Prénom Nom [À REMPLIR]", statut: "Licence STAPS", photo: "", engagement: "Le terrain rapproche plus vite que tous les discours." },
-        adjoint: { nom: "Prénom Nom [À REMPLIR]", statut: "Ingénieur stagiaire", photo: "", engagement: "Bouger ensemble pour tenir ensemble." },
+        nom: "Pape Kane",
+        titre: "Secrétaire général et directeur de campagne",
+        statut: "",
+        photo: "", // ex. "images/gouvernement/pape-kane.jpg"
+        engagement: "Une association bien organisée, transparente et joignable à tout moment.",
       },
     ],
+    annonce: "Les présidents et adjoints des six commissions seront présentés très prochainement.",
+    poles: [],
   },
 
   /* ------------------------------------------------------------------------
@@ -270,9 +264,9 @@ const SITE = {
      Photo facultative : ajoutez  photo: "images/realisations/nom.jpg",  dans un bloc.
      ------------------------------------------------------------------------ */
   realisations: [
-    { date: "Septembre 2026 [À REMPLIR]", titre: "Accueil de rentrée", texte: "[À REMPLIR] nouveaux arrivants accueillis et accompagnés dans leurs premières démarches." },
-    { date: "Été 2026 [À REMPLIR]", titre: "Collecte solidaire", texte: "[À REMPLIR] Collecte de fournitures et de vêtements pour les étudiants en difficulté." },
-    { date: "Printemps 2026 [À REMPLIR]", titre: "Tournoi de football", texte: "[À REMPLIR] Un tournoi qui a réuni plus de 60 participants." },
+    { date: "Rentrée 2026", titre: "Accueil des nouveaux arrivants", texte: "Accueil et accompagnement des nouveaux étudiants sénégalais dans leurs premières démarches : logement, banque, inscriptions." },
+    { date: "Année 2025-2026", titre: "Solidarité au quotidien", texte: "Soutien aux étudiants en difficulté : orientation vers les aides, accompagnement administratif et entraide entre membres." },
+    { date: "Année 2025-2026", titre: "Des moments qui rassemblent", texte: "Participation à l’organisation des rencontres de la communauté : fêtes, soirées culturelles et activités sportives." },
   ],
 
   guide: {
@@ -288,12 +282,13 @@ const SITE = {
      Photos à mettre dans images/equipe/ (carrées de préférence)
      ------------------------------------------------------------------------ */
   equipe: [
-    { nom: "Prénom Nom [À REMPLIR]", role: "Directrice de campagne", photo: "" },
-    { nom: "Prénom Nom [À REMPLIR]", role: "Trésorier de campagne", photo: "" },
-    { nom: "Prénom Nom [À REMPLIR]", role: "Responsable communication", photo: "" },
-    { nom: "Prénom Nom [À REMPLIR]", role: "Responsable terrain", photo: "" },
-    { nom: "Prénom Nom [À REMPLIR]", role: "Photographe et vidéo", photo: "" },
-    { nom: "Prénom Nom [À REMPLIR]", role: "Chargée des réseaux sociaux", photo: "" },
+    // Noms provisoires (sauf Pape Kane) : remplacez-les par les vrais membres de l'équipe.
+    { nom: "Pape Kane", role: "Directeur de campagne", photo: "" },
+    { nom: "Aïssatou Ndiaye", role: "Responsable communication", photo: "" },
+    { nom: "Mamadou Diallo", role: "Trésorier de campagne", photo: "" },
+    { nom: "Fatou Sow", role: "Chargée des réseaux sociaux", photo: "" },
+    { nom: "Ousmane Faye", role: "Responsable terrain", photo: "" },
+    { nom: "Ndèye Fall", role: "Photo et vidéo", photo: "" },
   ],
 
   /* ------------------------------------------------------------------------
@@ -330,11 +325,11 @@ const SITE = {
      13. QUESTIONS FRÉQUENTES
      ------------------------------------------------------------------------ */
   faq: [
-    { question: "Qui peut voter ?", reponse: "Tous les membres de l’AESST à jour de leur adhésion le jour du vote. [À REMPLIR : conditions exactes]" },
-    { question: "Quand a lieu l’élection ?", reponse: "Le dimanche 25 octobre 2026, de 10 h à 18 h. [À REMPLIR : horaires exacts]" },
-    { question: "Où vote-t-on ?", reponse: "À la salle [À REMPLIR], Toulouse. Accès en métro : [À REMPLIR]." },
-    { question: "Comment voter ?", reponse: "Présentez-vous avec une pièce d’identité et votre carte de membre ou votre carte étudiante. [À REMPLIR]" },
-    { question: "Je ne suis pas encore adhérent, que faire ?", reponse: "Vous pouvez adhérer auprès de l’AESST jusqu’au [À REMPLIR]. Écrivez-nous sur WhatsApp, nous vous expliquons tout." },
+    { question: "Qui peut voter ?", reponse: "Tous les membres de l’AESST à jour de leur adhésion le jour du vote, selon les statuts de l’association." },
+    { question: "Quand a lieu l’élection ?", reponse: "Le dimanche 25 octobre 2026. Les horaires exacts seront annoncés ici et sur WhatsApp." },
+    { question: "Où vote-t-on ?", reponse: "À Toulouse. Le lieu exact, avec l’accès en métro, sera annoncé ici et sur WhatsApp dès qu’il sera confirmé." },
+    { question: "Comment voter ?", reponse: "Présentez-vous au bureau de vote avec une pièce d’identité et votre carte de membre ou votre carte étudiante, puis votez pour Solid’Action." },
+    { question: "Je ne suis pas encore adhérent, que faire ?", reponse: "Il est encore possible d’adhérer à l’AESST avant le scrutin. Écrivez-nous sur WhatsApp : nous vous expliquons comment faire." },
     { question: "Comment rejoindre l’équipe Solid’Action ?", reponse: "Envoyez-nous un message sur WhatsApp ou passez par la boîte à idées : toutes les bonnes volontés sont les bienvenues." },
   ],
 };
