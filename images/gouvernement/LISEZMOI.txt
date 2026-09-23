@@ -1,0 +1,14 @@
+PHOTOS DU GOUVERNEMENT (présidents et adjoints de commission)
+-------------------------------------------------------------
+Déposez ici une photo CARRÉE par personne (~400 x 400 px, visage centré), nommée simplement :
+  social-president.jpg     social-adjoint.jpg
+  logement-president.jpg   logement-adjoint.jpg
+  accueil-president.jpg    accueil-adjoint.jpg
+  etudes-president.jpg     etudes-adjoint.jpg
+  culture-president.jpg    culture-adjoint.jpg
+  sport-president.jpg      sport-adjoint.jpg
+
+Puis dans content.js, section « 7. LE GOUVERNEMENT » :
+  photo: "images/gouvernement/social-president.jpg",
+
+Sans photo, un avatar aux initiales s'affiche automatiquement.

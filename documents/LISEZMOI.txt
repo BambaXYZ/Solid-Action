@@ -1,0 +1,3 @@
+Déposez ici le guide des nouveaux arrivants au format PDF, nommé :
+  guide-nouveaux-arrivants.pdf
+(ou changez le nom dans content.js, rubrique « guide », ligne « lien »).
