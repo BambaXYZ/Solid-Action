@@ -29,6 +29,8 @@ const SITE = {
     slogan: "La solidarité dans l’action",
     association: "Association des Étudiants et Stagiaires Sénégalais de Toulouse",
     sigle: "AESST",
+    // Titulaire des droits, affiché en bas de page : « © 2026 … — Tous droits réservés. »
+    droits: "Cheikh Awa Balla Mbacke CISSE",
   },
 
   /* ------------------------------------------------------------------------

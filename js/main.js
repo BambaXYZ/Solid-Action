@@ -334,7 +334,9 @@
   set("[data-socials]", socials.filter(function (s) { return ct[s[0]]; }).map(function (s) {
     return '<li><a href="' + esc(ct[s[0]]) + '" target="_blank" rel="noopener" aria-label="' + s[1] + '">' + icon(s[0]) + "</a></li>";
   }).join(""));
-  set("[data-footer-bottom]", "© " + new Date().getFullYear() + " " + esc(S.general.nomListe) + " — Liste candidate à l’élection de l’" + esc(S.general.association) + " (" + esc(S.general.sigle) + ").");
+  set("[data-footer-bottom]",
+    "© " + new Date().getFullYear() + " " + esc(S.general.droits || S.general.nomListe) + " — Tous droits réservés.<br>" +
+    esc(S.general.nomListe) + ", liste candidate à l’élection de l’" + esc(S.general.association) + " (" + esc(S.general.sigle) + ").");
 
 
   /* ---------- menu mobile ---------- */
