@@ -249,24 +249,32 @@
   }).join(""));
 
   /* ---------- 10. vidéo ---------- */
-  set("[data-video-titre]", txt(S.video.titre));
-  set("[data-video-texte]", txt(S.video.texte));
-  var v = S.video, vbox = $("[data-video]");
-  var yt = (v.youtube || "").match(/(?:shorts\/|v=|youtu\.be\/|embed\/)([\w-]{6,})/);
-  if (v.fichier) {
-    vbox.innerHTML = '<video controls playsinline preload="none"' + (v.apercu ? ' poster="' + esc(v.apercu) + '"' : "") + '><source src="' + esc(v.fichier) + '" type="video/mp4">Votre navigateur ne lit pas cette vidéo.</video>';
-  } else if (yt) {
-    // la vidéo YouTube ne se charge qu'au clic, pour garder un site rapide
-    vbox.innerHTML = '<button type="button" class="video-placeholder video-play" aria-label="Lire la vidéo">' +
-      '<span class="play-btn">' + icon("play") + "</span><span>Lire la vidéo</span></button>";
-    $(".video-play", vbox).addEventListener("click", function () {
-      vbox.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + yt[1] + '?autoplay=1&playsinline=1" title="' + esc(v.titre) + '" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
-    });
+  var v = S.video;
+  if (v.afficher === false) {
+    // section masquée : on garde l'alternance des fonds colorés entre les sections suivantes
+    $("#video").remove();
+    $("#idees").classList.add("section-soft");
+    $("#faq").classList.remove("section-soft");
   } else {
-    vbox.innerHTML = '<div class="video-placeholder"><span class="play-btn">' + icon("play") + "</span><span>Vidéo bientôt disponible</span></div>";
+    set("[data-video-titre]", txt(v.titre));
+    set("[data-video-texte]", txt(v.texte));
+    var vbox = $("[data-video]");
+    var yt = (v.youtube || "").match(/(?:shorts\/|v=|youtu\.be\/|embed\/)([\w-]{6,})/);
+    if (v.fichier) {
+      vbox.innerHTML = '<video controls playsinline preload="none"' + (v.apercu ? ' poster="' + esc(v.apercu) + '"' : "") + '><source src="' + esc(v.fichier) + '" type="video/mp4">Votre navigateur ne lit pas cette vidéo.</video>';
+    } else if (yt) {
+      // la vidéo YouTube ne se charge qu'au clic, pour garder un site rapide
+      vbox.innerHTML = '<button type="button" class="video-placeholder video-play" aria-label="Lire la vidéo">' +
+        '<span class="play-btn">' + icon("play") + "</span><span>Lire la vidéo</span></button>";
+      $(".video-play", vbox).addEventListener("click", function () {
+        vbox.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + yt[1] + '?autoplay=1&playsinline=1" title="' + esc(v.titre) + '" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+      });
+    } else {
+      vbox.innerHTML = '<div class="video-placeholder"><span class="play-btn">' + icon("play") + "</span><span>Vidéo bientôt disponible</span></div>";
+    }
   }
 
-  /* ---------- 11. boîte à idées (Netlify Forms) ---------- */
+  /* ---------- 11. boîte à idées ---------- */
   set("[data-idees-intro]", txt(S.boiteAIdees.intro));
   var select = $("[data-commission-select]");
   S.commissions.forEach(function (m) {
