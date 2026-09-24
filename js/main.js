@@ -50,6 +50,29 @@
       "</span>";
   }
 
+  /* ---------- mode « Bientôt disponible » ---------- */
+  var html = document.documentElement;
+  if (html.classList.contains("verrou")) {
+    var waLien = "https://wa.me/" + String(S.contact.whatsapp).replace(/\D/g, "") + "?text=" + encodeURIComponent(S.contact.messageWhatsapp || "");
+    $("#bientot").innerHTML =
+      '<div class="bientot-inner">' +
+      '<img class="bientot-logo" src="images/logo/logo-complet.svg" alt="Solid’Action — La solidarité dans l’action" width="300" height="204">' +
+      '<p class="hero-badge">' + icon("calendrier") + "<span>Élection · <strong>" + txt(S.election.dateTexte) + "</strong></span></p>" +
+      "<h1>Bientôt en ligne</h1>" +
+      '<p class="bientot-texte">' + txt(S.acces.message) + "</p>" +
+      '<a class="btn btn-whatsapp" href="' + esc(waLien) + '" target="_blank" rel="noopener">' + icon("whatsapp") + "Nous écrire sur WhatsApp</a>" +
+      "</div>";
+    return;
+  }
+  if (html.classList.contains("apercu")) {
+    var badge = document.createElement("a");
+    badge.className = "apercu-badge";
+    badge.href = "?apercu=off";
+    badge.title = "Quitter l’aperçu privé";
+    badge.textContent = "Aperçu privé · site fermé au public";
+    document.body.appendChild(badge);
+  }
+
   var c = S.candidat;
   var nomComplet = (c.prenom + " " + (c.nom || "")).trim();
   var commissionsById = {};
