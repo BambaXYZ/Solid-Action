@@ -285,8 +285,9 @@
   }
   function sendByWhatsApp() {
     var d = new FormData(form);
-    var msg = "*Idée pour Solid’Action*\n\n*Commission :* " + d.get("commission") + "\n\n" + d.get("idee") +
-      (d.get("nom") ? "\n\n— " + d.get("nom") : "");
+    // message en texte simple (sans emoji ni mise en forme) pour s'afficher sur tous les téléphones
+    var msg = "Idée pour Solid'Action\n\nCommission : " + d.get("commission") + "\n\nIdée : " + d.get("idee") +
+      (d.get("nom") ? "\n\nNom : " + d.get("nom") : "");
     window.open("https://wa.me/" + String(S.contact.whatsapp).replace(/\D/g, "") + "?text=" + encodeURIComponent(msg), "_blank", "noopener");
     status.className = "form-status is-ok";
     status.textContent = "WhatsApp s’est ouvert : il ne reste qu’à appuyer sur « Envoyer ». Merci !";
