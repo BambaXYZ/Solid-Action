@@ -22,6 +22,22 @@
 const SITE = {
 
   /* ------------------------------------------------------------------------
+     0. ACCÈS AU SITE (mode « Bientôt disponible »)
+     ------------------------------------------------------------------------
+     ouvert: false → tout le monde voit une page d'attente « Bientôt en ligne ».
+     ouvert: true  → le site complet est visible par tous (jour du lancement).
+
+     Pour voir le vrai site pendant qu'il est fermé, ouvrez une seule fois :
+       https://bambaxyz.github.io/Solid-Action/?apercu=salam2026
+     (le téléphone s'en souvient ensuite ; pour oublier : ?apercu=off)
+     Ce n'est pas un vrai mot de passe : ne partagez pas ce lien. */
+  acces: {
+    ouvert: false,
+    codeApercu: "salam2026",
+    message: "Le site de campagne de Solid’Action arrive très bientôt. Restez connectés !",
+  },
+
+  /* ------------------------------------------------------------------------
      1. INFORMATIONS GÉNÉRALES
      ------------------------------------------------------------------------ */
   general: {

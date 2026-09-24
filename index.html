@@ -29,9 +29,30 @@
 
   <link rel="preload" href="fonts/poppins-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=202609242233">
+  <link rel="stylesheet" href="css/style.css?v=202609242235">
+  <!-- Le contenu est chargé tout de suite pour savoir si le site est ouvert ou en mode « Bientôt disponible » -->
+  <script src="content.js?v=202609242235"></script>
+  <script>
+    (function () {
+      try {
+        var a = SITE.acces || {};
+        if (a.ouvert !== false) return;
+        var cle = "solidaction-apercu", code = new URLSearchParams(location.search).get("apercu"), memo = null;
+        try {
+          if (code === "off") localStorage.removeItem(cle);
+          else if (code) localStorage.setItem(cle, code);
+          memo = localStorage.getItem(cle);
+        } catch (e) {}
+        if ((code || memo) === a.codeApercu) document.documentElement.classList.add("apercu");
+        else document.documentElement.classList.add("verrou");
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
+  <!-- Page d'attente (mode « Bientôt disponible », voir content.js section 0) -->
+  <div class="bientot" id="bientot"></div>
+
   <a class="skip-link" href="#contenu">Aller au contenu</a>
 
   <!-- 1. MENU -->
@@ -242,8 +263,7 @@
 
   <a class="wa-float" data-whatsapp href="#contact" aria-label="Nous écrire sur WhatsApp"><span data-icon="whatsapp"></span></a>
 
-  <script src="content.js?v=202609242233"></script>
-  <script src="js/icones.js?v=202609242233"></script>
-  <script src="js/main.js?v=202609242233"></script>
+  <script src="js/icones.js?v=202609242235"></script>
+  <script src="js/main.js?v=202609242235"></script>
 </body>
 </html>
