@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="fr">
+<!-- Modèle de la vidéo « Salam vous parle » (1080x1920, 60 s).
+     Chaque image est dessinée par draw(t) puis capturée : voir outils/video/generer-video.js -->
+<meta charset="utf-8">
+<style>
+@font-face{font-family:P;font-weight:600;src:url(../../fonts/poppins-latin-600-normal.woff2)}
+@font-face{font-family:P;font-weight:700;src:url(../../fonts/poppins-latin-700-normal.woff2)}
+@font-face{font-family:I;font-weight:500;src:url(../../fonts/inter-latin-500-normal.woff2)}
+*{box-sizing:border-box}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#2A1A14}
+.scene{position:absolute;inset:0;overflow:hidden}
+/* ---------- intro ---------- */
+#intro{background:radial-gradient(ellipse 70% 45% at 85% 10%,rgba(233,169,139,.45),transparent 70%),radial-gradient(ellipse 60% 40% at 0% 95%,rgba(233,169,139,.35),transparent 70%),#FBF6F1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:P,sans-serif;color:#2A1A14}
+#intro .logo{width:700px}
+#intro .badge{margin-top:70px;font-weight:600;font-size:34px;letter-spacing:.2em;text-transform:uppercase;color:#A84A26}
+#intro h1{margin:18px 0 0;font-size:112px;line-height:1.02;letter-spacing:-.03em}
+/* ---------- voix ---------- */
+#voix img.photo{position:absolute;left:50%;top:0;height:100%;width:auto;min-width:100%;object-fit:cover;transform-origin:50% 28%}
+#voix .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(42,26,20,.55) 0%,rgba(42,26,20,0) 18%,rgba(42,26,20,0) 42%,rgba(42,26,20,.78) 68%,rgba(42,26,20,.95) 100%)}
+#voix .top{position:absolute;top:70px;left:70px;right:70px;display:flex;align-items:center;justify-content:space-between}
+#voix .top img{height:84px}
+#voix .live{display:flex;align-items:center;gap:14px;background:rgba(251,246,241,.14);border:1.5px solid rgba(251,246,241,.25);padding:14px 24px;border-radius:999px;font:600 28px P;color:#FBF6F1;letter-spacing:.06em}
+#voix .live i{width:16px;height:16px;border-radius:50%;background:#E9A98B;display:block}
+#voix .bottom{position:absolute;left:70px;right:70px;bottom:190px;display:flex;flex-direction:column;gap:30px}
+#voix .bars{display:flex;align-items:flex-end;gap:10px;height:90px}
+#voix .bars b{width:12px;border-radius:6px;background:#E9A98B;display:block;height:12px}
+#voix .phrase{font:700 70px/1.14 P,sans-serif;color:#FBF6F1;letter-spacing:-.015em}
+#voix .phrase em{font-style:normal;color:#F0B89C}
+#voix .count{margin-top:-8px;font:600 26px P;letter-spacing:.2em;color:#E9A98B;text-transform:uppercase}
+#voix .name{position:absolute;left:70px;right:70px;bottom:80px;display:flex;align-items:center;gap:22px;color:#FBF6F1}
+#voix .name .dot{width:8px;height:70px;border-radius:4px;background:#B9562F}
+#voix .name strong{display:block;font:700 44px P}
+#voix .name span{display:block;font:500 28px I;color:#E8D7CD}
+#voix .progress{position:absolute;left:0;top:0;height:10px;background:#B9562F}
+/* ---------- fin ---------- */
+#fin{background:linear-gradient(160deg,#C0613A 0%,#9C4424 100%);color:#FBF6F1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:P,sans-serif;padding:0 80px}
+#fin .logo{width:560px}
+#fin .k{margin-top:70px;font-weight:600;font-size:40px;letter-spacing:.28em;text-transform:uppercase;color:#FBE0D2}
+#fin h2{margin:6px 0 0;font-size:136px;line-height:1;letter-spacing:-.03em;white-space:nowrap}
+#fin .date{margin-top:56px;background:#FBF6F1;color:#9C4424;font-weight:700;font-size:52px;padding:22px 52px;border-radius:999px}
+#fin .info{margin-top:56px;font:500 36px/1.5 I,sans-serif;color:#FBE9DF}
+#fin .info strong{font-family:P;font-weight:600;color:#fff}
+#fin .wa{margin-top:44px;display:inline-flex;align-items:center;gap:18px;background:#1C7C54;border-radius:999px;padding:20px 40px;font:600 40px P}
+#fin .wa svg{width:48px;height:48px}
+#fin .site{margin-top:36px;font:500 30px I;color:#FBE0D2;letter-spacing:.02em}
+</style>
+<body>
+<section class="scene" id="intro">
+  <img class="logo" src="../../images/logo/logo-complet.svg" alt="">
+  <div class="badge">Élection ASEST · 25 octobre</div>
+  <h1>Salam<br>vous parle</h1>
+</section>
+
+<section class="scene" id="voix">
+  <img class="photo" src="salam.jpg" alt="">
+  <div class="shade"></div>
+  <div class="progress"></div>
+  <div class="top"><img src="../../images/logo/logo-menu-clair.svg" alt=""><div class="live"><i></i>SALAM VOUS PARLE</div></div>
+  <div class="bottom">
+    <div class="bars"></div>
+    <div class="phrase"></div>
+    <div class="count"></div>
+  </div>
+  <div class="name"><div class="dot"></div><div><strong>Salam</strong><span>Candidat à la présidence de l’ASEST</span></div></div>
+</section>
+
+<section class="scene" id="fin">
+  <img class="logo" src="../../images/logo/logo-complet-clair.svg" alt="">
+  <div class="k">Votez</div>
+  <h2>Solid’Action</h2>
+  <div class="date">Dimanche 25 octobre</div>
+  <div class="info"><strong>Salle des fêtes de Lafourguette</strong><br>28 rue de Gironis, 31100 Toulouse</div>
+  <div class="wa"><svg viewBox="0 0 24 24" fill="currentColor" id="wa"></svg>07 58 70 63 26</div>
+  <div class="site">bambaxyz.github.io/Solid-Action</div>
+</section>
+
+<script>
+// Phrases affichées pendant la voix (les mots entre * * sont mis en couleur)
+const PHRASES = [
+  "Trois ans à Toulouse. Vice-président de l’ASEST. *Je connais le terrain.*",
+  "Solidifier l’existant, rassembler les forces, *construire la suite.*",
+  "Une caisse de solidarité d’urgence : *personne ne restera seul.*",
+  "My ASEST, Wéru Toulouse, Exprime-toi : *une ASEST qui se fait entendre.*",
+  "Inscriptions, orientation, talents : *on avance ensemble.*",
+  "Ngoonal, ndogou, Korité, Tabaski : *des moments qui nous rassemblent.*",
+];
+const INTRO = 6, VOIX = 42.1, FIN = 12;           // durées en secondes
+let ENV = [];                                      // enveloppe de la voix (0..1, une valeur toutes les 40 ms)
+const $ = s => document.querySelector(s);
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const ease = x => 1 - Math.pow(1 - clamp(x, 0, 1), 3);
+const fade = (t, a, b, d = .6) => clamp(Math.min((t - a) / d, (b - t) / d), 0, 1);  // 0→1→0 entre a et b
+
+const bars = $('#voix .bars');
+for (let i = 0; i < 22; i++) bars.appendChild(document.createElement('b'));
+
+function setPhrase(i) {
+  const el = $('#voix .phrase');
+  if (el.dataset.i == i) return;
+  el.dataset.i = i;
+  el.innerHTML = PHRASES[i].replace(/\*(.+?)\*/g, '<em>$1</em>').replace(/ :/g, '&nbsp;:');
+  $('#voix .count').textContent = String(i + 1).padStart(2, '0') + ' / ' + String(PHRASES.length).padStart(2, '0');
+}
+
+window.draw = function (t) {
+  const intro = $('#intro'), voix = $('#voix'), fin = $('#fin');
+  // ---- intro ----
+  intro.style.display = t < INTRO + 0.6 ? 'flex' : 'none';
+  if (t < INTRO + 0.6) {
+    const lg = ease(t / 1.2);
+    intro.querySelector('.logo').style.cssText = `opacity:${lg};transform:translateY(${(1 - lg) * 40}px) scale(${.92 + .08 * lg})`;
+    const b = ease((t - 1.2) / .8), h = ease((t - 1.7) / .9);
+    intro.querySelector('.badge').style.cssText = `opacity:${b};transform:translateY(${(1 - b) * 30}px)`;
+    intro.querySelector('h1').style.cssText = `opacity:${h};transform:translateY(${(1 - h) * 40}px)`;
+    intro.style.opacity = 1 - clamp((t - INTRO) / .6, 0, 1);
+    intro.style.zIndex = 3;
+  }
+  // ---- voix ----
+  const tv = t - INTRO;
+  voix.style.display = (tv > -0.1 && tv < VOIX + .7) ? 'block' : 'none';
+  if (voix.style.display === 'block') {
+    const p = clamp(tv / VOIX, 0, 1);
+    voix.querySelector('.photo').style.transform = `translateX(-50%) scale(${1.04 + .14 * p}) translateY(${-p * 1.5}%)`;
+    voix.querySelector('.progress').style.width = (p * 100) + '%';
+    const k = Math.floor(clamp(tv, 0, VOIX - .01) / (VOIX / PHRASES.length));
+    setPhrase(k);
+    const a = k * VOIX / PHRASES.length, z = a + VOIX / PHRASES.length;
+    const f = fade(tv, a + .15, z - .05, .55);
+    const ph = voix.querySelector('.phrase');
+    ph.style.opacity = f; ph.style.transform = `translateY(${(1 - ease(f)) * 36}px)`;
+    voix.querySelector('.count').style.opacity = f;
+    // barres au rythme de la voix
+    const fi = Math.floor(tv * 25);
+    [...bars.children].forEach((b, i) => {
+      const v = ENV[clamp(fi - Math.abs(i - 11) % 4, 0, ENV.length - 1)] || 0;
+      const wob = .55 + .45 * Math.abs(Math.sin(i * 1.7 + tv * 9));
+      b.style.height = (12 + 78 * v * wob) + 'px';
+    });
+    const live = voix.querySelector('.live i');
+    live.style.opacity = .45 + .55 * (ENV[clamp(fi, 0, ENV.length - 1)] || 0);
+    voix.style.opacity = tv < 0 ? 0 : 1 - clamp((tv - VOIX) / .7, 0, 1);
+    voix.style.zIndex = 2;
+  }
+  // ---- fin ----
+  const tf = t - INTRO - VOIX;
+  fin.style.display = tf > -0.8 ? 'flex' : 'none';
+  if (tf > -0.8) {
+    fin.style.zIndex = 1;
+    const items = ['.logo', '.k', 'h2', '.date', '.info', '.wa', '.site'];
+    items.forEach((s, i) => {
+      const e = ease((tf - .2 - i * .25) / .8);
+      fin.querySelector(s).style.cssText += `;opacity:${e};transform:translateY(${(1 - e) * 36}px)`;
+    });
+  }
+};
+</script>
+</body>
+</html>

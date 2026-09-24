@@ -189,6 +189,15 @@ La planche de présentation est dans `outils/apercu-logos.png`.
 
 ---
 
+## La vidéo « Salam vous parle »
+
+`videos/salam-vous-parle.mp4` (60 s, format vertical 9:16, environ 3 Mo) : la voix de Salam sur sa photo animée,
+avec des phrases de campagne, puis un écran final (date, lieu, WhatsApp).
+Elle est aussi prête à être partagée telle quelle en statut WhatsApp, sur Instagram ou sur TikTok.
+
+Pour modifier les phrases, éditez la liste `PHRASES` dans `outils/video/salam-vous-parle.html`, puis regénérez
+la vidéo avec `outils/video/generer-video.js` (Node.js + Playwright) et ffmpeg.
+
 ## 6. Organisation des fichiers
 
 ```
