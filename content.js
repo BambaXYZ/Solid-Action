@@ -103,14 +103,14 @@ const SITE = {
     accroche: "Étudiant en Master 1 au Mirail et vice-président de l’ASEST, je veux une association qui agit concrètement pour chacun d’entre nous.",
 
     biographie: [
-      "Arrivé à Toulouse il y a trois ans pour étudier les langues, littératures et civilisations étrangères (LLCER) à l’Université Toulouse Jean-Jaurès, j’ai vécu comme beaucoup d’entre vous les premières semaines difficiles : logement, démarches, éloignement de la famille.",
+      "Arrivé à Toulouse il y a trois ans pour étudier les langues, littératures et civilisations étrangères (LLCER) à l’Université du Mirail, j’ai vécu comme beaucoup d’entre vous les premières semaines difficiles : logement, démarches, éloignement de la famille.",
       "J’y ai suivi toute ma licence, de la L1 à la L3, avant d’entrer en Master 1 LLCER parcours international. En parallèle, je me suis engagé dans la vie de notre communauté : d’abord comme président de la commission Organisation, puis comme vice-président de l’ASEST dans le bureau actuel.",
       "Cette expérience m’a appris ce que notre association sait faire de mieux, et ce qu’il lui manque encore. C’est pour aller plus loin, ensemble, que je me présente aujourd’hui.",
     ],
 
     // Trois repères du parcours
     parcours: [
-      { titre: "Études", texte: "Master 1 LLCER, parcours international, Université Toulouse Jean-Jaurès (Le Mirail)" },
+      { titre: "Études", texte: "Master 1 LLCER, parcours international, Université du Mirail" },
       { titre: "Parcours", texte: "Licence LLCER de la L1 à la L3 au Mirail, trois ans de vie étudiante à Toulouse" },
       { titre: "Engagements", texte: "Président de la commission Organisation, puis vice-président de l’ASEST dans le bureau actuel" },
     ],
