@@ -28,7 +28,11 @@ const SITE = {
     nomListe: "Solid’Action",
     slogan: "La solidarité dans l’action",
     association: "Association des Étudiants et Stagiaires Sénégalais de Toulouse",
-    sigle: "AESST",
+    sigle: "ASEST",
+    // Phrase d'accroche affichée sur l'accueil, sous le nom du candidat
+    devise: "Solidifier l’existant, rassembler les forces, construire la suite. Ensemble pour une meilleure communauté.",
+    // Grand titre de l'accueil : « Votez » + nom de la liste
+    appelAuVote: "Votez",
     // Nom affiché en bas de page : « © 2026 … »
     droits: "Cheikh Awa Balla Mbacke CISSE",
   },
@@ -42,8 +46,8 @@ const SITE = {
     date: "2026-10-25T10:00:00+01:00",
     dateTexte: "Dimanche 25 octobre 2026",
     horaires: "Horaires communiqués prochainement",
-    lieu: "Lieu communiqué prochainement, à Toulouse",
-    lieuLienCarte: "", // lien Google Maps du lieu de vote (facultatif)
+    lieu: "Salle des fêtes de Lafourguette, 28 rue de Gironis, 31100 Toulouse",
+    lieuLienCarte: "https://www.google.com/maps/search/?api=1&query=Salle+des+f%C3%AAtes+Lafourguette+28+rue+de+Gironis+31100+Toulouse", // lien Google Maps du lieu de vote (facultatif)
   },
 
   /* ------------------------------------------------------------------------
@@ -53,9 +57,9 @@ const SITE = {
      Exemple pour 06 12 34 56 78 en France : "33612345678".
      Laissez "" pour un réseau que vous n'utilisez pas : il sera masqué. */
   contact: {
-    whatsapp: "33600000000", // ⚠️ [À REMPLIR] : numéro WhatsApp de la campagne (faux numéro pour l'instant)
+    whatsapp: "33758706326", // 07 58 70 63 26
     messageWhatsapp: "Bonjour Solid’Action ! J’ai une question sur votre programme :",
-    telephoneAffiche: "", // ex. "+33 6 12 34 56 78" (laisser "" pour ne pas l'afficher)
+    telephoneAffiche: "07 58 70 63 26", // laisser "" pour ne pas l'afficher
     email: "",            // ex. "solidaction.aesst@gmail.com"
     instagram: "",        // ex. "https://www.instagram.com/solidaction.aesst"
     facebook: "",
@@ -72,15 +76,19 @@ const SITE = {
     fonction: "Candidat à la présidence de l’Association des Étudiants et Stagiaires Sénégalais de Toulouse",
 
     // Grande photo de l'accueil (idéalement portrait vertical, fond neutre, 1200 px de haut)
-    photoAccueil: "", // ex. "images/candidat/candidat-accueil.jpg"
+    photoAccueil: "images/candidat/candidat-accueil.jpg",
     // Photo plus naturelle pour la section « Le candidat »
-    photoPortrait: "", // ex. "images/candidat/candidat-portrait.jpg"
+    photoPortrait: "images/candidat/candidat-portrait.jpg",
+    // Photo carrée du visage, pour le petit rond de la section Gouvernement
+    photoVisage: "images/candidat/candidat-visage.jpg",
+    // Titre de la section « Le candidat »
+    titreSection: "Salam au service de tous",
 
-    accroche: "Étudiant en Master 1 au Mirail et vice-président de l’AESST, je veux une association qui agit concrètement pour chacun d’entre nous.",
+    accroche: "Étudiant en Master 1 au Mirail et vice-président de l’ASEST, je veux une association qui agit concrètement pour chacun d’entre nous.",
 
     biographie: [
       "Arrivé à Toulouse il y a trois ans pour étudier les langues, littératures et civilisations étrangères (LLCER) à l’Université Toulouse Jean-Jaurès, j’ai vécu comme beaucoup d’entre vous les premières semaines difficiles : logement, démarches, éloignement de la famille.",
-      "J’y ai suivi toute ma licence, de la L1 à la L3, avant d’entrer en Master 1 LLCER parcours international. En parallèle, je me suis engagé dans la vie de notre communauté, jusqu’à devenir vice-président de l’AESST dans le bureau actuel.",
+      "J’y ai suivi toute ma licence, de la L1 à la L3, avant d’entrer en Master 1 LLCER parcours international. En parallèle, je me suis engagé dans la vie de notre communauté : d’abord comme président de la commission Organisation, puis comme vice-président de l’ASEST dans le bureau actuel.",
       "Cette expérience m’a appris ce que notre association sait faire de mieux, et ce qu’il lui manque encore. C’est pour aller plus loin, ensemble, que je me présente aujourd’hui.",
     ],
 
@@ -88,7 +96,7 @@ const SITE = {
     parcours: [
       { titre: "Études", texte: "Master 1 LLCER, parcours international, Université Toulouse Jean-Jaurès (Le Mirail)" },
       { titre: "Parcours", texte: "Licence LLCER de la L1 à la L3 au Mirail, trois ans de vie étudiante à Toulouse" },
-      { titre: "Engagements", texte: "Vice-président de l’AESST dans le bureau actuel" },
+      { titre: "Engagements", texte: "Président de la commission Organisation, puis vice-président de l’ASEST dans le bureau actuel" },
     ],
 
     citation: {
@@ -99,8 +107,8 @@ const SITE = {
     // Trois chiffres clés (animés au défilement). valeur = un nombre uniquement.
     chiffres: [
       { valeur: 3, suffixe: " ans", texte: "d’études et d’engagement à Toulouse" },
-      { valeur: 6, suffixe: "", texte: "commissions pour couvrir toute la vie étudiante" },
-      { valeur: 18, suffixe: "", texte: "propositions concrètes dans notre programme" },
+      { valeur: 5, suffixe: "", texte: "commissions pour couvrir toute la vie étudiante" },
+      { valeur: 22, suffixe: "", texte: "propositions concrètes dans notre programme" },
     ],
   },
 
@@ -119,73 +127,69 @@ const SITE = {
      ------------------------------------------------------------------------
      id : identifiant court, sans espace ni accent (sert aux liens internes).
      icone : "social", "logement", "accueil", "etudes", "culture", "sport",
-             "communication", "finances"
+             "communication", "finances", "calendrier"
      Vous pouvez ajouter ou supprimer une commission (copier-coller un bloc). */
   commissions: [
     {
-      id: "social",
+      id: "sociale",
       icone: "social",
-      nom: "Affaires sociales",
+      nom: "Commission sociale",
       constat: "Trop d’étudiants traversent seuls une urgence financière, médicale ou administrative, sans savoir vers qui se tourner.",
       propositions: [
-        "Une caisse de solidarité d’urgence, avec une réponse sous 72 heures.",
-        "Une permanence mensuelle d’aide aux démarches (titre de séjour, CAF, sécurité sociale).",
-        "Un réseau de parrains pour ne laisser personne isolé.",
+        "Une caisse de solidarité d’urgence, avec une réponse rapide aux situations difficiles.",
+        "Un accompagnement aux démarches : titre de séjour, CAF, sécurité sociale, logement.",
+        "Un accueil et un parrainage des nouveaux arrivants pour ne laisser personne isolé.",
       ],
     },
     {
-      id: "logement",
-      icone: "logement",
-      nom: "Logement",
-      constat: "Trouver un logement sans garant ni réseau reste le premier obstacle à l’arrivée à Toulouse.",
+      id: "communication",
+      icone: "communication",
+      nom: "Communication et relations extérieures",
+      constat: "Nos activités restent peu visibles, faute d’outils de communication et d’une présence régulière auprès des étudiants et des partenaires.",
       propositions: [
-        "Une bourse au logement : colocations, sous-locations et hébergement temporaire entre membres.",
-        "Un guide pratique des garanties (Visale, garants) et des arnaques à éviter.",
-        "Un accompagnement aux visites pour les nouveaux arrivants.",
-      ],
-    },
-    {
-      id: "accueil",
-      icone: "accueil",
-      nom: "Accueil et intégration",
-      constat: "Les premières semaines décident souvent de toute l’année, mais l’accueil reste improvisé.",
-      propositions: [
-        "Un accueil à l’aéroport et à la gare pendant la rentrée.",
-        "Un guide gratuit des nouveaux arrivants, mis à jour chaque année.",
-        "Une journée d’intégration dès septembre.",
-      ],
-    },
-    {
-      id: "etudes",
-      icone: "etudes",
-      nom: "Études et insertion pro",
-      constat: "Stages, alternances et premiers emplois : beaucoup de talents manquent seulement de réseau.",
-      propositions: [
-        "Des ateliers CV, lettre de motivation et entretien chaque trimestre.",
-        "Un annuaire des anciens pour trouver un mentor dans son domaine.",
-        "Des séances de révision collectives avant les examens.",
-      ],
-    },
-    {
-      id: "culture",
-      icone: "culture",
-      nom: "Culture et événements",
-      constat: "Notre culture nous rassemble, mais les événements restent trop rares et mal annoncés.",
-      propositions: [
-        "Un calendrier annuel des événements publié dès la rentrée.",
-        "Une grande soirée culturelle sénégalaise ouverte à tous les Toulousains.",
-        "Des moments de partage pour les fêtes religieuses et nationales.",
+        "Création du site internet de l’association : « My ASEST ».",
+        "Achat de matériel audiovisuel (caméra, micro…).",
+        "Mise en place d’un studio à l’ASEST.",
+        "Création d’un journal mensuel : « Wéru Toulouse ».",
+        "Un podcast vidéo toutes les deux semaines : « Exprime-toi ».",
       ],
     },
     {
       id: "sport",
       icone: "sport",
-      nom: "Sport et bien-être",
-      constat: "Le sport crée des liens, pourtant aucune activité régulière n’est proposée aux membres.",
+      nom: "Commission sport",
+      constat: "Le sport crée des liens, pourtant trop peu d’activités régulières sont proposées aux étudiants.",
       propositions: [
-        "Des matchs de football hebdomadaires ouverts à toutes et à tous.",
+        "Des matchs de football réguliers, ouverts à toutes et à tous.",
         "Un tournoi inter-associations au printemps.",
-        "Des sorties découverte de la région.",
+        "Des sorties sportives et de découverte de la région.",
+      ],
+    },
+    {
+      id: "pedagogique",
+      icone: "etudes",
+      nom: "Commission pédagogique",
+      constat: "Inscriptions, choix de formation, orientation : beaucoup d’étudiants avancent sans repères ni accompagnement.",
+      propositions: [
+        "« Mes inscriptions et formations » : un accompagnement pas à pas pour les inscriptions.",
+        "« Ma formation » : identifier les obstacles et saisir les opportunités.",
+        "« Mon orientation » : conseils sur l’alternance et les formations universitaires.",
+        "Des ateliers pédagogiques, avec une série de conférences.",
+        "« Wanél sa talent » : un concours oratoire pour promouvoir les jeunes talents étudiants.",
+      ],
+    },
+    {
+      id: "organisation",
+      icone: "calendrier",
+      nom: "Commission d’organisation",
+      constat: "Nos grands rendez-vous rassemblent, mais ils doivent être plus réguliers et mieux préparés.",
+      propositions: [
+        "Les 48 h de l’ASEST.",
+        "Le Ngoonal de l’ASEST, un samedi sur deux.",
+        "Deux grands ndogou pendant le mois de Ramadan.",
+        "L’after Korité.",
+        "La Tabaski ensemble.",
+        "Le grand événement de l’ASEST au mois de juin.",
       ],
     },
   ],
@@ -210,21 +214,28 @@ const SITE = {
     intro: "Une équipe déjà en place autour de Salam, prête à travailler dès le premier jour.",
     bureau: [
       {
-        nom: "Khoudia",
+        nom: "Khoudia NDAO",
         titre: "Vice-présidente",
         statut: "Master 1 E2-CMD, Université Toulouse III – Paul Sabatier",
-        photo: "", // ex. "images/gouvernement/khoudia.jpg"
+        photo: "", // ex. "images/gouvernement/khoudia-ndao.jpg"
         engagement: "Être à l’écoute de chaque étudiant et faire avancer nos projets avec rigueur.",
       },
       {
-        nom: "Pape Kane",
-        titre: "Secrétaire général et directeur de campagne",
+        nom: "Pape Mamadou KANE",
+        titre: "Secrétaire général",
         statut: "",
-        photo: "", // ex. "images/gouvernement/pape-kane.jpg"
+        photo: "", // ex. "images/gouvernement/pape-mamadou-kane.jpg"
         engagement: "Une association bien organisée, transparente et joignable à tout moment.",
       },
+      {
+        nom: "Mamadou TALLA",
+        titre: "Trésorier",
+        statut: "",
+        photo: "", // ex. "images/gouvernement/mamadou-talla.jpg"
+        engagement: "Des comptes clairs et partagés, pour que chaque euro serve les étudiants.",
+      },
     ],
-    annonce: "Les présidents et adjoints des six commissions seront présentés très prochainement.",
+    annonce: "Les présidents et adjoints des cinq commissions seront présentés très prochainement.",
     poles: [],
   },
 
@@ -236,8 +247,8 @@ const SITE = {
       periode: "Mois 1",
       titre: "Rassembler",
       engagements: [
-        "Installation du gouvernement et publication du calendrier annuel",
-        "Lancement de la caisse de solidarité d’urgence",
+        "Installation du bureau et publication du calendrier annuel",
+        "Lancement du Ngoonal de l’ASEST, un samedi sur deux",
         "Assemblée ouverte pour recueillir vos idées",
       ],
     },
@@ -245,17 +256,17 @@ const SITE = {
       periode: "Mois 2",
       titre: "Accompagner",
       engagements: [
-        "Ouverture de la bourse au logement",
-        "Premier atelier CV et entretien",
-        "Lancement des matchs hebdomadaires",
+        "Lancement de la caisse de solidarité d’urgence",
+        "Premier atelier pédagogique « Mon orientation »",
+        "Premier épisode du podcast « Exprime-toi »",
       ],
     },
     {
       periode: "Mois 3",
       titre: "Rendre des comptes",
       engagements: [
-        "Première grande soirée culturelle",
-        "Mise en ligne de l’annuaire des anciens",
+        "Premier numéro du journal « Wéru Toulouse »",
+        "Préparation des grands ndogou du Ramadan",
         "Bilan public des 100 jours, chiffres à l’appui",
       ],
     },
@@ -272,10 +283,10 @@ const SITE = {
   ],
 
   guide: {
-    titre: "Le guide gratuit des nouveaux arrivants",
-    texte: "Logement, banque, titre de séjour, transports, bons plans : tout ce qu’il faut savoir pour bien démarrer à Toulouse, réuni dans un seul guide.",
+    titre: "Le guide pratique des nouveaux arrivants",
+    texte: "Arrivée, logement, CROUS, transports, santé, vie étudiante : le guide « Bienvenue à Toulouse » de Campus France réunit tout ce qu’il faut savoir pour bien démarrer.",
     // Mettez le PDF dans le dossier documents/ puis indiquez son nom ici
-    lien: "documents/guide-nouveaux-arrivants.pdf",
+    lien: "documents/guide-bienvenue-a-toulouse.pdf",
     bouton: "Télécharger le guide (PDF)",
   },
 
@@ -284,13 +295,24 @@ const SITE = {
      Photos à mettre dans images/equipe/ (carrées de préférence)
      ------------------------------------------------------------------------ */
   equipe: [
-    // Noms provisoires (sauf Pape Kane) : remplacez-les par les vrais membres de l'équipe.
-    { nom: "Pape Kane", role: "Directeur de campagne", photo: "" },
-    { nom: "Aïssatou Ndiaye", role: "Responsable communication", photo: "" },
-    { nom: "Mamadou Diallo", role: "Trésorier de campagne", photo: "" },
-    { nom: "Fatou Sow", role: "Chargée des réseaux sociaux", photo: "" },
-    { nom: "Ousmane Faye", role: "Responsable terrain", photo: "" },
-    { nom: "Ndèye Fall", role: "Photo et vidéo", photo: "" },
+    // role est facultatif : laissez-le vide ("") ou retirez-le pour n'afficher que le nom
+    { nom: "Abdou Aziz DIOP", photo: "" },
+    { nom: "Khoudia NDAO", photo: "" },
+    { nom: "Mamadou TALLA", photo: "" },
+    { nom: "Pape Mamadou KANE", photo: "" },
+    { nom: "Seynabou GUEYE", photo: "" },
+    { nom: "Leila Ait Ka SY", photo: "" },
+    { nom: "Moustapha HANN", photo: "" },
+    { nom: "Serigne Fallou KANTE", photo: "" },
+    { nom: "Mouhamadou GUEYE", photo: "" },
+    { nom: "Ngagne NGOM", photo: "" },
+    { nom: "Fatima AW", photo: "" },
+    { nom: "Ibrahima FAYE", photo: "" },
+    { nom: "Sophie NDIAYE", photo: "" },
+    { nom: "Racky Serigne NDIAYE", photo: "" },
+    { nom: "Serigne Modou DIOP", photo: "" },
+    { nom: "Mouhamed NDIAYE", photo: "" },
+    { nom: "Ndeye Penda DIOUM", photo: "" },
   ],
 
   /* ------------------------------------------------------------------------
@@ -327,11 +349,10 @@ const SITE = {
      13. QUESTIONS FRÉQUENTES
      ------------------------------------------------------------------------ */
   faq: [
-    { question: "Qui peut voter ?", reponse: "Tous les membres de l’AESST à jour de leur adhésion le jour du vote, selon les statuts de l’association." },
+    { question: "Qui peut voter ?", reponse: "Tous les étudiants de Toulouse." },
     { question: "Quand a lieu l’élection ?", reponse: "Le dimanche 25 octobre 2026. Les horaires exacts seront annoncés ici et sur WhatsApp." },
-    { question: "Où vote-t-on ?", reponse: "À Toulouse. Le lieu exact, avec l’accès en métro, sera annoncé ici et sur WhatsApp dès qu’il sera confirmé." },
-    { question: "Comment voter ?", reponse: "Présentez-vous au bureau de vote avec une pièce d’identité et votre carte de membre ou votre carte étudiante, puis votez pour Solid’Action." },
-    { question: "Je ne suis pas encore adhérent, que faire ?", reponse: "Il est encore possible d’adhérer à l’AESST avant le scrutin. Écrivez-nous sur WhatsApp : nous vous expliquons comment faire." },
-    { question: "Comment rejoindre l’équipe Solid’Action ?", reponse: "Envoyez-nous un message sur WhatsApp ou passez par la boîte à idées : toutes les bonnes volontés sont les bienvenues." },
+    { question: "Où vote-t-on ?", reponse: "À la salle des fêtes de Lafourguette, 28 rue de Gironis, 31100 Toulouse." },
+    { question: "Comment voter ?", reponse: "Présentez-vous au bureau de vote avec votre carte étudiante et une pièce d’identité, puis votez pour Solid’Action." },
+    { question: "Comment rejoindre l’équipe Solid’Action ?", reponse: "Envoyez-nous un message sur WhatsApp au 07 58 70 63 26 ou passez par la boîte à idées : toutes les bonnes volontés sont les bienvenues." },
   ],
 };
