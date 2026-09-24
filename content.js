@@ -325,8 +325,8 @@ const SITE = {
   video: {
     titre: "Salam vous parle",
     texte: "Une minute pour comprendre pourquoi je me présente et ce que nous allons faire ensemble.",
-    fichier: "",
-    apercu: "", // ex. "images/candidat/video-apercu.jpg"
+    fichier: "videos/salam-vous-parle.mp4",
+    apercu: "images/candidat/video-apercu.jpg",
     youtube: "",
   },
 
