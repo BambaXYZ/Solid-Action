@@ -20,7 +20,7 @@
   }
   // Texte sûr, avec les [À REMPLIR] surlignés pour les repérer facilement
   function txt(str) {
-    return esc(str).replace(/« /g, "«&nbsp;").replace(/ »/g, "&nbsp;»").replace(/\[À REMPLIR[^\]]*\]/g, function (m) { return '<mark class="todo">' + m + "</mark>"; });
+    return esc(str).replace(/« /g, "«&nbsp;").replace(/ ([»:;!?])/g, "&nbsp;$1").replace(/\[À REMPLIR[^\]]*\]/g, function (m) { return '<mark class="todo">' + m + "</mark>"; });
   }
   function icon(name, cls) {
     var i = ICO[name];

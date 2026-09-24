@@ -229,5 +229,5 @@ Double-cliquez sur `index.html` : le site s’ouvre dans le navigateur.
 | Brun foncé | `#2A1A14` | Textes |
 | Crème | `#FBF6F1` | Fond |
 
-Polices : **Poppins** (titres) et **Inter** (texte). Contrastes vérifiés selon les normes d’accessibilité AA.
+Polices : **Plus Jakarta Sans** (titres et texte). Contrastes vérifiés selon les normes d’accessibilité AA.
 Les animations sont automatiquement désactivées si l’option « réduire les animations » est activée sur le téléphone.
