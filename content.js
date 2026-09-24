@@ -323,10 +323,11 @@ const SITE = {
      Option B : vidéo YouTube  → youtube: "https://www.youtube.com/shorts/XXXX"
      Laissez les deux vides : un emplacement « bientôt disponible » s'affiche. */
   video: {
+    afficher: false, // mettre true pour afficher la section Vidéo sur le site
     titre: "Salam vous parle",
     texte: "Une minute pour comprendre pourquoi je me présente et ce que nous allons faire ensemble.",
-    fichier: "videos/salam-vous-parle.mp4",
-    apercu: "images/candidat/video-apercu.jpg",
+    fichier: "",
+    apercu: "",
     youtube: "",
   },
 
