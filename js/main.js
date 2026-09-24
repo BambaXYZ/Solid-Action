@@ -285,7 +285,7 @@
   }
   function sendByWhatsApp() {
     var d = new FormData(form);
-    var msg = "💡 Idée pour Solid’Action\n\nCommission : " + d.get("commission") + "\n\n" + d.get("idee") +
+    var msg = "*Idée pour Solid’Action*\n\n*Commission :* " + d.get("commission") + "\n\n" + d.get("idee") +
       (d.get("nom") ? "\n\n— " + d.get("nom") : "");
     window.open("https://wa.me/" + String(S.contact.whatsapp).replace(/\D/g, "") + "?text=" + encodeURIComponent(msg), "_blank", "noopener");
     status.className = "form-status is-ok";
