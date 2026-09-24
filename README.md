@@ -1,7 +1,7 @@
 # Solid’Action — site de campagne
 
 Site de la liste **Solid’Action** (candidat : **Salam**) pour l’élection à la présidence de
-l’Association des Étudiants et Stagiaires Sénégalais de Toulouse (AESST), le **dimanche 25 octobre 2026**.
+l’Association des Étudiants et Stagiaires Sénégalais de Toulouse (ASEST), le **dimanche 25 octobre 2026**.
 
 > *La solidarité dans l’action.*
 
@@ -79,7 +79,7 @@ Tant qu’une photo manque, **un avatar élégant aux initiales** s’affiche au
 | `images/gouvernement/` | `social-president.jpg`, `social-adjoint.jpg`, `logement-president.jpg`… | carré, ~400 × 400 px |
 | `images/equipe/` | `prenom-nom.jpg` | carré, ~400 × 400 px |
 | `images/realisations/` | une photo par action (facultatif) | horizontal, ~1200 × 750 px |
-| `documents/` | `guide-nouveaux-arrivants.pdf` | PDF |
+| `documents/` | `guide-bienvenue-a-toulouse.pdf` | PDF |
 | `videos/` | la vidéo verticale (ou utilisez YouTube) | MP4 9:16, < 20 Mo |
 
 Exemple dans `content.js` :

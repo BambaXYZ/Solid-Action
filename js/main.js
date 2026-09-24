@@ -20,7 +20,7 @@
   }
   // Texte sûr, avec les [À REMPLIR] surlignés pour les repérer facilement
   function txt(str) {
-    return esc(str).replace(/\[À REMPLIR[^\]]*\]/g, function (m) { return '<mark class="todo">' + m + "</mark>"; });
+    return esc(str).replace(/« /g, "«&nbsp;").replace(/ »/g, "&nbsp;»").replace(/\[À REMPLIR[^\]]*\]/g, function (m) { return '<mark class="todo">' + m + "</mark>"; });
   }
   function icon(name, cls) {
     var i = ICO[name];
@@ -67,9 +67,10 @@
 
   /* ---------- 2. accueil ---------- */
   set("[data-election-badge]", icon("calendrier") + "<span>Élection · <strong>" + txt(S.election.dateTexte) + "</strong></span>");
-  set("[data-candidat-nom]", '<span class="hero-kicker">Votez</span> ' + txt(nomComplet));
-  set("[data-candidat-fonction]", txt(c.fonction));
-  set("[data-slogan]", txt(S.general.slogan));
+  set("[data-candidat-nom]", '<span class="hero-kicker">' + txt(S.general.appelAuVote || "Votez") + "</span> " + txt(S.general.nomListe));
+  var fonction = String(c.fonction || "");
+  set("[data-candidat-fonction]", "<strong>" + txt(nomComplet) + "</strong>, " + txt(fonction.charAt(0).toLowerCase() + fonction.slice(1)));
+  set("[data-slogan]", txt(S.general.devise || S.general.slogan));
 
   var heroPhoto = $("[data-hero-photo]");
   if (c.photoAccueil) {
@@ -110,7 +111,7 @@
   tick();
 
   /* ---------- 3. le candidat ---------- */
-  set("[data-candidat-titre]", txt(nomComplet) + ", au service de tous");
+  set("[data-candidat-titre]", txt(c.titreSection || nomComplet + " au service de tous"));
   set("[data-candidat-accroche]", txt(c.accroche));
   set("[data-candidat-bio]", c.biographie.map(function (p) { return "<p>" + txt(p) + "</p>"; }).join(""));
   var parcoursIcons = ["etudes", "mallette", "solidarite"];
@@ -216,7 +217,7 @@
         }).join("") + "</ul></div>"
       : "");
   set("[data-gouvernement]",
-    '<div class="chef reveal' + (bureau.length || poles.length ? "" : " chef-seul") + '">' + avatar(c.photoPortrait || c.photoAccueil, nomComplet, "avatar-lg") +
+    '<div class="chef reveal' + (bureau.length || poles.length ? "" : " chef-seul") + '">' + avatar(c.photoVisage || c.photoPortrait || c.photoAccueil, nomComplet, "avatar-lg") +
     '<span class="membre-role">Candidat à la présidence</span><strong class="chef-nom">' + txt(nomComplet) + "</strong>" +
     '<span class="chef-slogan">' + txt(S.general.slogan) + "</span></div>" +
     bureauHtml + polesHtml);
@@ -244,7 +245,7 @@
   /* ---------- 9. équipe ---------- */
   set("[data-equipe]", S.equipe.map(function (p) {
     return '<li class="personne reveal">' + avatar(p.photo, p.nom, "avatar-team") +
-      "<strong>" + txt(p.nom) + "</strong><span>" + txt(p.role) + "</span></li>";
+      "<strong>" + txt(p.nom) + "</strong>" + (p.role ? "<span>" + txt(p.role) + "</span>" : "") + "</li>";
   }).join(""));
 
   /* ---------- 10. vidéo ---------- */
