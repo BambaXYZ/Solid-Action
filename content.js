@@ -233,7 +233,7 @@ const SITE = {
         nom: "Khoudia NDAO",
         titre: "Vice-présidente",
         statut: "Master 1 E2-CMD, Université Toulouse III – Paul Sabatier",
-        photo: "", // ex. "images/gouvernement/khoudia-ndao.jpg"
+        photo: "images/gouvernement/khoudia-ndao.jpg",
         engagement: "Être à l’écoute de chaque étudiant et faire avancer nos projets avec rigueur.",
       },
       {
@@ -313,7 +313,7 @@ const SITE = {
   equipe: [
     // role est facultatif : laissez-le vide ("") ou retirez-le pour n'afficher que le nom
     { nom: "Abdou Aziz DIOP", photo: "" },
-    { nom: "Khoudia NDAO", photo: "" },
+    { nom: "Khoudia NDAO", photo: "images/gouvernement/khoudia-ndao.jpg" },
     { nom: "Mamadou TALLA", photo: "" },
     { nom: "Pape Mamadou KANE", photo: "" },
     { nom: "Seynabou GUEYE", photo: "" },
