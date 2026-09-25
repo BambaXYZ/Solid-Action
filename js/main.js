@@ -50,6 +50,16 @@
       "</span>";
   }
 
+  /* ---------- statistiques de visites (GoatCounter) ---------- */
+  var gc = S.statistiques && String(S.statistiques.goatcounter || "").trim();
+  if (gc && location.protocol.indexOf("http") === 0 && location.hostname !== "localhost") {
+    var sc = document.createElement("script");
+    sc.async = true;
+    sc.src = "https://gc.zgo.at/count.js";
+    sc.setAttribute("data-goatcounter", "https://" + gc + ".goatcounter.com/count");
+    document.body.appendChild(sc);
+  }
+
   /* ---------- mode « Bientôt disponible » ---------- */
   var html = document.documentElement;
   if (html.classList.contains("verrou")) {
