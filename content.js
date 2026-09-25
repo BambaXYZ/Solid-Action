@@ -124,7 +124,7 @@ const SITE = {
     chiffres: [
       { valeur: 3, suffixe: " ans", texte: "d’études et d’engagement à Toulouse" },
       { valeur: 5, suffixe: "", texte: "commissions pour couvrir toute la vie étudiante" },
-      { valeur: 22, suffixe: "", texte: "propositions concrètes dans notre programme" },
+      { valeur: 25, suffixe: "", texte: "propositions concrètes dans notre programme" },
     ],
   },
 
@@ -155,6 +155,7 @@ const SITE = {
         "Une caisse de solidarité d’urgence, avec une réponse rapide aux situations difficiles.",
         "Un accompagnement aux démarches : titre de séjour, CAF, sécurité sociale, logement.",
         "Un accueil et un parrainage des nouveaux arrivants pour ne laisser personne isolé.",
+        "« Outal ma job » : un réseau de restaurants, commerces et entreprises partenaires qui contactent directement l’ASEST pour recruter. Nous leur transmettons les CV des étudiants disponibles : plus besoin de chercher seul sur Indeed.",
       ],
     },
     {
@@ -168,6 +169,8 @@ const SITE = {
         "Mise en place d’un studio à l’ASEST.",
         "Création d’un journal mensuel : « Wéru Toulouse ».",
         "Un podcast vidéo toutes les deux semaines : « Exprime-toi ».",
+        "Des partenariats avec les restaurants et structures de Toulouse pour faire vivre « Outal ma job », via le site My ASEST.",
+        "L’ASEST et les autres associations en France : rencontres, projets communs et échanges d’expériences.",
       ],
     },
     {
