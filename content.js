@@ -38,6 +38,16 @@ const SITE = {
   },
 
   /* ------------------------------------------------------------------------
+     STATISTIQUES DE VISITES (GoatCounter, gratuit, sans cookies)
+     ------------------------------------------------------------------------
+     Code du compte créé sur https://www.goatcounter.com
+     Les statistiques se consultent sur https://solidaction.goatcounter.com
+     Laisser "" pour désactiver le comptage. */
+  statistiques: {
+    goatcounter: "solidaction",
+  },
+
+  /* ------------------------------------------------------------------------
      1. INFORMATIONS GÉNÉRALES
      ------------------------------------------------------------------------ */
   general: {
