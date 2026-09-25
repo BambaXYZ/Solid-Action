@@ -360,7 +360,7 @@
     "<li>" + icon("lieu") + "<span>" + (e.lieuLienCarte ? '<a href="' + esc(e.lieuLienCarte) + '" target="_blank" rel="noopener">' + txt(e.lieu) + "</a>" : txt(e.lieu)) + "</span></li></ul>" +
     '<p class="footer-slogan">' + txt(S.general.slogan) + "</p>");
   var ct = S.contact, contactItems = [];
-  if (ct.telephoneAffiche) contactItems.push("<li>" + icon("telephone") + '<a href="tel:+' + esc(String(ct.whatsapp).replace(/\D/g, "")) + '">' + txt(ct.telephoneAffiche) + "</a></li>");
+  if (ct.telephoneAffiche) contactItems.push("<li>" + icon("telephone") + '<a href="tel:+' + esc(String(ct.telephone || ct.whatsapp).replace(/\D/g, "")) + '">' + txt(ct.telephoneAffiche) + "</a></li>");
   if (ct.email) contactItems.push("<li>" + icon("mail") + '<a href="mailto:' + esc(ct.email) + '">' + txt(ct.email) + "</a></li>");
   set("[data-footer-contact]", contactItems.join(""));
   var socials = [["instagram", "Instagram"], ["facebook", "Facebook"], ["tiktok", "TikTok"], ["linkedin", "LinkedIn"]];
