@@ -75,7 +75,9 @@ const SITE = {
   contact: {
     whatsapp: "33758706326", // 07 58 70 63 26
     messageWhatsapp: "Bonjour Solid’Action ! J’ai une question sur votre programme :",
-    telephoneAffiche: "07 58 70 63 26", // laisser "" pour ne pas l'afficher
+    // Numéro d'appel affiché dans « Nous contacter » (pied de page), différent du WhatsApp ci-dessus
+    telephoneAffiche: "06 71 88 63 93", // laisser "" pour ne pas l'afficher
+    telephone: "33671886393",           // même numéro, format international sans + ni espaces
     email: "",            // ex. "solidaction.aesst@gmail.com"
     instagram: "",        // ex. "https://www.instagram.com/solidaction.aesst"
     facebook: "",
