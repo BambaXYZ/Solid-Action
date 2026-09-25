@@ -29,9 +29,10 @@
 
   <link rel="preload" href="fonts/plus-jakarta-sans-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/plus-jakarta-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=202609251227">
+  <link rel="stylesheet" href="css/style.css?v=202609251230">
   <!-- Le contenu est chargé tout de suite pour savoir si le site est ouvert ou en mode « Bientôt disponible » -->
-  <script src="content.js?v=202609251227"></script>
+  <!-- content.js est toujours rechargé à neuf : une modification du contenu est visible tout de suite -->
+  <script>document.write('<script src="content.js?t=' + Date.now() + '"><\/script>');</script>
   <script>
     (function () {
       try {
@@ -263,7 +264,7 @@
 
   <a class="wa-float" data-whatsapp href="#contact" aria-label="Nous écrire sur WhatsApp"><span data-icon="whatsapp"></span></a>
 
-  <script src="js/icones.js?v=202609251227"></script>
-  <script src="js/main.js?v=202609251227"></script>
+  <script src="js/icones.js?v=202609251230"></script>
+  <script src="js/main.js?v=202609251230"></script>
 </body>
 </html>
