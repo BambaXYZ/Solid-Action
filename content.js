@@ -32,7 +32,7 @@ const SITE = {
      (le téléphone s'en souvient ensuite ; pour oublier : ?apercu=off)
      Ce n'est pas un vrai mot de passe : ne partagez pas ce lien. */
   acces: {
-    ouvert: false,
+    ouvert: true,
     codeApercu: "salam2026",
     message: "Le site de campagne de Solid’Action arrive très bientôt. Restez connectés !",
   },
