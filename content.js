@@ -246,8 +246,8 @@ const SITE = {
       {
         nom: "Mamadou TALLA",
         titre: "Trésorier",
-        statut: "",
-        photo: "", // ex. "images/gouvernement/mamadou-talla.jpg"
+        statut: "BTS 2 MCO (Management Commercial Opérationnel)",
+        photo: "images/gouvernement/mamadou-talla.jpg",
         engagement: "Des comptes clairs et partagés, pour que chaque euro serve les étudiants.",
       },
     ],
@@ -314,7 +314,7 @@ const SITE = {
     // role est facultatif : laissez-le vide ("") ou retirez-le pour n'afficher que le nom
     { nom: "Abdou Aziz DIOP", photo: "" },
     { nom: "Khoudia NDAO", photo: "images/gouvernement/khoudia-ndao.jpg" },
-    { nom: "Mamadou TALLA", photo: "" },
+    { nom: "Mamadou TALLA", photo: "images/gouvernement/mamadou-talla.jpg" },
     { nom: "Pape Mamadou KANE", photo: "images/gouvernement/pape-mamadou-kane.jpg" },
     { nom: "Seynabou GUEYE", photo: "" },
     { nom: "Leila Ait Ka SY", photo: "" },
