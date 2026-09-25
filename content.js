@@ -240,7 +240,7 @@ const SITE = {
         nom: "Pape Mamadou KANE",
         titre: "Secrétaire général",
         statut: "",
-        photo: "", // ex. "images/gouvernement/pape-mamadou-kane.jpg"
+        photo: "images/gouvernement/pape-mamadou-kane.jpg",
         engagement: "Une association bien organisée, transparente et joignable à tout moment.",
       },
       {
@@ -315,7 +315,7 @@ const SITE = {
     { nom: "Abdou Aziz DIOP", photo: "" },
     { nom: "Khoudia NDAO", photo: "images/gouvernement/khoudia-ndao.jpg" },
     { nom: "Mamadou TALLA", photo: "" },
-    { nom: "Pape Mamadou KANE", photo: "" },
+    { nom: "Pape Mamadou KANE", photo: "images/gouvernement/pape-mamadou-kane.jpg" },
     { nom: "Seynabou GUEYE", photo: "" },
     { nom: "Leila Ait Ka SY", photo: "" },
     { nom: "Moustapha HANN", photo: "" },
