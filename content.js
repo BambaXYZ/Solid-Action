@@ -245,10 +245,10 @@ const SITE = {
     intro: "Une équipe déjà en place autour de Salam, prête à travailler dès le premier jour.",
     bureau: [
       {
-        nom: "Khoudia NDAO",
+        nom: "Khoudia NDAW",
         titre: "Vice-présidente",
         statut: "Master 1 E2-CMD, Université Toulouse III – Paul Sabatier",
-        photo: "images/gouvernement/khoudia-ndao.jpg",
+        photo: "images/gouvernement/khoudia-ndaw.jpg",
         engagement: "Être à l’écoute de chaque étudiant et faire avancer nos projets avec rigueur.",
       },
       {
@@ -328,7 +328,7 @@ const SITE = {
   equipe: [
     // role est facultatif : laissez-le vide ("") ou retirez-le pour n'afficher que le nom
     { nom: "Abdou Aziz DIOP", photo: "" },
-    { nom: "Khoudia NDAO", photo: "images/gouvernement/khoudia-ndao.jpg" },
+    { nom: "Khoudia NDAW", photo: "images/gouvernement/khoudia-ndaw.jpg" },
     { nom: "Mamadou TALLA", photo: "images/gouvernement/mamadou-talla.jpg" },
     { nom: "Pape Mamadou KANE", photo: "images/gouvernement/pape-mamadou-kane.jpg" },
     { nom: "Seynabou GUEYE", photo: "" },
