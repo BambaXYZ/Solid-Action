@@ -68,10 +68,15 @@
       '<div class="bientot-inner">' +
       '<img class="bientot-logo" src="images/logo/logo-complet.svg" alt="Solid’Action — La solidarité dans l’action" width="300" height="204">' +
       '<p class="hero-badge">' + icon("calendrier") + "<span>Élection · <strong>" + txt(S.election.dateTexte) + "</strong></span></p>" +
-      "<h1>Bientôt en ligne</h1>" +
+      "<h1>" + txt(S.acces.titre || "Bientôt en ligne") + "</h1>" +
       '<p class="bientot-texte">' + txt(S.acces.message) + "</p>" +
       '<a class="btn btn-whatsapp" href="' + esc(waLien) + '" target="_blank" rel="noopener">' + icon("whatsapp") + "Nous écrire sur WhatsApp</a>" +
       "</div>";
+    // rechargement automatique au moment de la réouverture, pour les pages restées ouvertes
+    var reouv = Date.parse(S.acces.ouvertureAuto || "");
+    if (reouv && reouv > Date.now() && reouv - Date.now() < 864e5) {
+      setTimeout(function () { location.reload(); }, reouv - Date.now() + 2000);
+    }
     return;
   }
   if (html.classList.contains("apercu")) {
