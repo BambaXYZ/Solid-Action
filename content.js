@@ -56,7 +56,7 @@ const SITE = {
     association: "Association des Étudiants et Stagiaires Sénégalais de Toulouse",
     sigle: "ASEST",
     // Phrase d'accroche affichée sur l'accueil, sous le nom du candidat
-    devise: "Solidifier l’existant, rassembler les forces, construire la suite. Ensemble pour une meilleure communauté.",
+    devise: "Solidarité notre priorité, l’action notre engagement.",
     // Grand titre de l'accueil : « Votez » + nom de la liste
     appelAuVote: "Votez",
     // Nom affiché en bas de page : « © 2026 … »
@@ -149,6 +149,72 @@ const SITE = {
     { icone: "transparence", titre: "Transparence", texte: "Chaque euro et chaque décision seront rendus publics, avec un bilan partagé tous les trois mois." },
     { icone: "action", titre: "Action", texte: "Des engagements concrets, datés et vérifiables, plutôt que des promesses sans lendemain." },
   ],
+
+  /* ------------------------------------------------------------------------
+     5 bis. LES GRANDES LIGNES DE NOTRE PROJET
+     ------------------------------------------------------------------------
+     Trois grands axes. Chaque axe contient un ou plusieurs groupes
+     (titre facultatif) et des points { nom, texte }.
+     icone : mêmes noms que pour les commissions (logement, etudes, solidarite…) */
+  axes: {
+    intro: "Solidifier l’existant, rassembler les forces, construire la suite. Ensemble pour une meilleure communauté.",
+    liste: [
+      {
+        icone: "logement",
+        titre: "Logement",
+        groupes: [
+          {
+            points: [
+              { nom: "L’accompagnement", texte: "Un soutien concret dans la recherche de logement : dossiers, garants, visites et conseils pour éviter les arnaques." },
+              { nom: "« Dallal ak Diam »", texte: "Un accueil chaleureux des nouveaux arrivants dès leurs premiers jours à Toulouse." },
+              { nom: "« Vous et nous »", texte: "La mise en relation entre étudiants qui proposent et ceux qui cherchent : colocations, sous-locations, hébergement temporaire." },
+            ],
+          },
+        ],
+      },
+      {
+        icone: "etudes",
+        titre: "L’université",
+        groupes: [
+          {
+            points: [
+              { nom: "Inscription", texte: "Un accompagnement pas à pas pour réussir ses démarches d’inscription." },
+              { nom: "Formation", texte: "Des conseils pour choisir sa formation et s’y épanouir." },
+              { nom: "Obstacles et opportunités", texte: "Identifier les difficultés à temps et saisir les bonnes occasions." },
+              { nom: "Insertion professionnelle", texte: "Stages, alternance, premier emploi : préparer l’après-diplôme." },
+            ],
+          },
+        ],
+      },
+      {
+        icone: "solidarite",
+        titre: "Stabilité",
+        groupes: [
+          {
+            titre: "Financière",
+            points: [
+              { nom: "La caisse de l’ASEST", texte: "Une aide rapide pour les étudiants en difficulté." },
+              { nom: "« Outal ma job »", texte: "Des employeurs partenaires qui recrutent directement via l’association." },
+              { nom: "Des dons", texte: "Une collecte solidaire pour soutenir ceux qui en ont besoin." },
+            ],
+          },
+          {
+            titre: "Mentale",
+            points: [
+              { nom: "Des conseils", texte: "Une écoute et des conseils pour traverser les moments difficiles." },
+              { nom: "« Ngoonal » ou « Dadié ba »", texte: "Des sorties hebdomadaires ou mensuelles pour échanger, jouer et rire ensemble." },
+            ],
+          },
+          {
+            titre: "Physique",
+            points: [
+              { nom: "Le sport ensemble", texte: "Des matchs de football réguliers, un tournoi inter-associations et des sorties sportives." },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 
   /* ------------------------------------------------------------------------
      6. LE PROGRAMME PAR COMMISSION
@@ -259,10 +325,10 @@ const SITE = {
         engagement: "Une association bien organisée, transparente et joignable à tout moment.",
       },
       {
-        nom: "Mamadou TALLA",
+        nom: "Alioune Badara NDIAYE",
         titre: "Trésorier",
-        statut: "BTS 2 MCO (Management Commercial Opérationnel)",
-        photo: "images/gouvernement/mamadou-talla.jpg",
+        statut: "",
+        photo: "images/gouvernement/alioune-badara-ndiaye.jpg",
         engagement: "Des comptes clairs et partagés, pour que chaque euro serve les étudiants.",
       },
     ],
@@ -329,6 +395,7 @@ const SITE = {
     // role est facultatif : laissez-le vide ("") ou retirez-le pour n'afficher que le nom
     { nom: "Abdou Aziz DIOP", photo: "" },
     { nom: "Khoudia NDAW", photo: "images/gouvernement/khoudia-ndaw.jpg" },
+    { nom: "Alioune Badara NDIAYE", photo: "images/gouvernement/alioune-badara-ndiaye.jpg" },
     { nom: "Mamadou TALLA", photo: "images/gouvernement/mamadou-talla.jpg" },
     { nom: "Pape Mamadou KANE", photo: "images/gouvernement/pape-mamadou-kane.jpg" },
     { nom: "Seynabou GUEYE", photo: "" },
