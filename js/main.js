@@ -169,6 +169,21 @@
     return '<li class="valeur reveal"><span class="valeur-icon">' + icon(v.icone) + "</span><h3>" + txt(v.titre) + "</h3><p>" + txt(v.texte) + "</p></li>";
   }).join(""));
 
+  /* ---------- 5 bis. grandes lignes du projet ---------- */
+  if (S.axes) {
+    set("[data-axes-intro]", txt(S.axes.intro));
+    set("[data-axes]", S.axes.liste.map(function (ax, i) {
+      return '<article class="axe reveal"><header class="axe-head"><span class="axe-num">' + (i + 1) + "</span>" +
+        '<span class="axe-icon">' + icon(ax.icone) + "</span><h3>" + txt(ax.titre) + "</h3></header>" +
+        ax.groupes.map(function (g) {
+          return '<div class="axe-groupe">' + (g.titre ? '<p class="axe-groupe-titre">' + txt(g.titre) + "</p>" : "") +
+            '<ul class="axe-points">' + g.points.map(function (pt) {
+              return "<li><strong>" + txt(pt.nom) + "</strong><span>" + txt(pt.texte) + "</span></li>";
+            }).join("") + "</ul></div>";
+        }).join("") + "</article>";
+    }).join(""));
+  }
+
   /* ---------- 5. programme (accordéon sur mobile) ---------- */
   set("[data-commissions]", S.commissions.map(function (m) {
     return '<article class="commission reveal" id="commission-' + esc(m.id) + '">' +

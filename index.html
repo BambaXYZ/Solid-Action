@@ -29,7 +29,7 @@
 
   <link rel="preload" href="fonts/plus-jakarta-sans-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/plus-jakarta-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=202609251416">
+  <link rel="stylesheet" href="css/style.css?v=202610161649">
   <!-- Le contenu est chargé tout de suite pour savoir si le site est ouvert ou en mode « Bientôt disponible » -->
   <!-- content.js est toujours rechargé à neuf : une modification du contenu est visible tout de suite -->
   <script>document.write('<script src="content.js?t=' + Date.now() + '"><\/script>');</script>
@@ -68,7 +68,7 @@
       <nav class="nav" id="menu" aria-label="Navigation principale">
         <ul>
           <li><a href="#candidat">Candidat</a></li>
-          <li><a href="#programme">Programme</a></li>
+          <li><a href="#axes">Programme</a></li>
           <li><a href="#gouvernement">Gouvernement</a></li>
           <li><a href="#equipe">Équipe</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -92,7 +92,7 @@
           <p class="hero-devise" data-slogan></p>
           <div class="countdown" data-countdown aria-live="off"></div>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#programme">Découvrir le programme<span data-icon="bas"></span></a>
+            <a class="btn btn-primary" href="#axes">Découvrir le programme<span data-icon="bas"></span></a>
             <a class="btn btn-whatsapp" data-whatsapp href="#contact"><span data-icon="whatsapp"></span>Nous écrire sur WhatsApp</a>
           </div>
         </div>
@@ -129,8 +129,20 @@
       </div>
     </section>
 
-    <!-- 5. LE PROGRAMME -->
-    <section class="section" id="programme" aria-labelledby="programme-titre">
+    <!-- 5. LES GRANDES LIGNES DU PROJET -->
+    <section class="section" id="axes" aria-labelledby="axes-titre">
+      <div class="container">
+        <div class="section-head center reveal">
+          <p class="eyebrow">Notre projet</p>
+          <h2 id="axes-titre" class="section-title">Les grandes lignes de notre projet</h2>
+          <p class="section-intro" data-axes-intro></p>
+        </div>
+        <div class="axes" data-axes></div>
+      </div>
+    </section>
+
+    <!-- 6. LE PROGRAMME PAR COMMISSION -->
+    <section class="section section-soft" id="programme" aria-labelledby="programme-titre">
       <div class="container">
         <div class="section-head reveal">
           <p class="eyebrow">Le programme</p>
@@ -264,7 +276,7 @@
 
   <a class="wa-float" data-whatsapp href="#contact" aria-label="Nous écrire sur WhatsApp"><span data-icon="whatsapp"></span></a>
 
-  <script src="js/icones.js?v=202609251416"></script>
-  <script src="js/main.js?v=202609251416"></script>
+  <script src="js/icones.js?v=202610161649"></script>
+  <script src="js/main.js?v=202610161649"></script>
 </body>
 </html>

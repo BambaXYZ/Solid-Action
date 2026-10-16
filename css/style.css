@@ -319,6 +319,26 @@ html.verrou .bientot {
 .valeur p { color: var(--muted); }
 
 /* ==========================================================================
+   5 bis. LES GRANDES LIGNES DU PROJET
+   ========================================================================== */
+.axes { display: grid; gap: 16px; }
+.axe { background: var(--white); border-radius: var(--radius-lg); padding: 24px 22px 26px; box-shadow: var(--shadow-sm); border-top: 4px solid var(--terracotta); }
+.axe-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.axe-num { font-family: var(--font-title); font-weight: 800; font-size: 2.4rem; line-height: 1; color: var(--peach); min-width: 1.1ch; }
+.axe-icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: var(--terracotta); color: var(--white); flex-shrink: 0; }
+.axe-head h3 { font-size: 1.45rem; font-weight: 800; }
+.axe-groupe + .axe-groupe { margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--line); }
+.axe-groupe-titre { font-family: var(--font-title); font-weight: 700; font-size: .74rem; letter-spacing: .18em; text-transform: uppercase; color: var(--terracotta-text); margin-bottom: 10px; }
+.axe-points { display: grid; gap: 12px; }
+.axe-points li { position: relative; padding-left: 20px; line-height: 1.5; }
+.axe-points li::before { content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--peach); }
+.axe-points strong { display: block; font-family: var(--font-title); font-weight: 700; color: var(--brown); }
+.axe-points span { display: block; color: var(--muted); font-size: .95rem; }
+@media (min-width: 900px) {
+  .axes { grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
+}
+
+/* ==========================================================================
    5. LE PROGRAMME (accordéon sur mobile)
    ========================================================================== */
 .commissions { display: grid; gap: 12px; }
