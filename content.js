@@ -32,10 +32,10 @@ const SITE = {
      (le téléphone s'en souvient ensuite ; pour oublier : ?apercu=off)
      Ce n'est pas un vrai mot de passe : ne partagez pas ce lien. */
   acces: {
-    ouvert: false,
+    ouvert: true,
     // Réouverture automatique à cette date et heure (heure de Toulouse), sans rien toucher.
     // Laisser "" pour ne pas rouvrir automatiquement.
-    ouvertureAuto: "2026-10-17T00:00:00+02:00",
+    ouvertureAuto: "",
     codeApercu: "cheikh1610",
     titre: "Site en maintenance",
     message: "Le site de Solid’Action est momentanément indisponible. Il revient à minuit, restez connectés !",
