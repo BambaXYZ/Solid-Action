@@ -28,7 +28,7 @@ const SITE = {
      ouvert: true  → le site complet est visible par tous (jour du lancement).
 
      Pour voir le vrai site pendant qu'il est fermé, ouvrez une seule fois :
-       https://bambaxyz.github.io/Solid-Action/?apercu=salam2026
+       https://bambaxyz.github.io/Solid-Action/?apercu=cheikh1610
      (le téléphone s'en souvient ensuite ; pour oublier : ?apercu=off)
      Ce n'est pas un vrai mot de passe : ne partagez pas ce lien. */
   acces: {
@@ -36,7 +36,7 @@ const SITE = {
     // Réouverture automatique à cette date et heure (heure de Toulouse), sans rien toucher.
     // Laisser "" pour ne pas rouvrir automatiquement.
     ouvertureAuto: "2026-10-17T00:00:00+02:00",
-    codeApercu: "salam2026",
+    codeApercu: "cheikh1610",
     titre: "Site en maintenance",
     message: "Le site de Solid’Action est momentanément indisponible. Il revient à minuit, restez connectés !",
   },
