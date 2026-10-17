@@ -231,3 +231,9 @@ Double-cliquez sur `index.html` : le site s’ouvre dans le navigateur.
 
 Polices : **Plus Jakarta Sans** (titres et texte). Contrastes vérifiés selon les normes d’accessibilité AA.
 Les animations sont automatiquement désactivées si l’option « réduire les animations » est activée sur le téléphone.
+
+---
+
+## Droits
+
+© 2026 Cheikh Awa Balla Mbacke CISSE – Tous droits réservés. Reproduction interdite sans autorisation (voir `LICENSE`).
