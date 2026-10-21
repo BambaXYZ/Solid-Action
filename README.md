@@ -103,7 +103,7 @@ Chaque dossier contient un fichier `LISEZMOI.txt` qui rappelle ces consignes.
 2. Dans le menu de gauche, cliquez sur **Pages**.
 3. Dans **Build and deployment → Source**, choisissez **Deploy from a branch**.
 4. Dans **Branch**, choisissez la branche qui contient le site
-   (actuellement `claude/solidaction-campaign-site-1fzeqy`) et le dossier **`/ (root)`**, puis **Save**.
+   (`main`) et le dossier **`/ (root)`**, puis **Save**.
 5. Attendez 1 à 2 minutes et rechargez la page : l’adresse du site s’affiche en haut
    (**https://bambaxyz.github.io/Solid-Action/**). Le site est en ligne !
 
