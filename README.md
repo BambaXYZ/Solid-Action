@@ -1,4 +1,4 @@
-# Solid’Action — site de campagne
+# Solid’Action site de campagne par CABMC
 
 Site de la liste **Solid’Action** (candidat : **Salam**) pour l’élection à la présidence de
 l’Association des Étudiants et Stagiaires Sénégalais de Toulouse (ASEST), le **dimanche 25 octobre 2026**.
